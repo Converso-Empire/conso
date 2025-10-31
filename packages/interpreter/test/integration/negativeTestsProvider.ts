@@ -133,7 +133,7 @@ export const NegativeTestCases = [
     name: "interpreter printing variable before declaration test, should throw an exception",
     input: `
           start conso;
-          print conso a;
+          conso print a;
           end conso;
         `,
     exception: RuntimeException,
@@ -142,7 +142,7 @@ export const NegativeTestCases = [
     name: "interpreter printing multiple variables before declaration test, should throw an exception",
     input: `
           start conso;
-          print conso a, b;
+          conso print a, b;
           end conso;
         `,
     exception: RuntimeException,
@@ -152,7 +152,7 @@ export const NegativeTestCases = [
     input: `
           start conso;
           conso a = 8;
-          print conso a, b;
+          conso print a, b;
           end conso;
         `,
     exception: RuntimeException,
@@ -183,7 +183,7 @@ export const NegativeTestCases = [
     input: `
       start conso;
       conso a;
-      print conso a + 9;
+      conso print a + 9;
       end conso;
     `,
     exception: nullPointerException,
@@ -193,7 +193,7 @@ export const NegativeTestCases = [
     input: `
       start conso;
       conso a = null;
-      print conso a + 9;
+      conso print a + 9;
       end conso;
     `,
     exception: nullPointerException,
@@ -242,7 +242,7 @@ export const NegativeTestCases = [
     input: `
       start conso;
       conso a = true;
-      print conso a + 9;
+      conso print a + 9;
       end conso;
     `,
     exception: RuntimeException,
@@ -252,7 +252,7 @@ export const NegativeTestCases = [
     input: `
       start conso;
       conso a = false;
-      print conso a + 9;
+      conso print a + 9;
       end conso;
     `,
     exception: RuntimeException,
@@ -403,7 +403,7 @@ export const NegativeTestCases = [
     name: "print statement test with expression containing null, should throw an exception",
     input: `
         start conso
-        print conso null + 5;
+        conso print null + 5;
         end conso;
       `,
     output: nullPointerException,
@@ -456,7 +456,7 @@ export const NegativeTestCases = [
         start conso
         conso a = 0;
         conso while (a < 2) {
-          print conso "conso";
+          conso print "conso";
         }
         end conso;
       `,
@@ -478,7 +478,7 @@ export const NegativeTestCases = [
     name: "use of null with &&, should throw an exception",
     input: `
         start conso
-        print conso null && 90;
+        conso print null && 90;
         end conso;
       `,
     output: nullPointerException,
@@ -488,7 +488,7 @@ export const NegativeTestCases = [
     input: `
         start conso
         conso a;
-        print conso a && 90;
+        conso print a && 90;
         end conso;
       `,
     output: nullPointerException,
@@ -498,7 +498,7 @@ export const NegativeTestCases = [
     name: `modulus operator test with invalid operand, should throw an exception`,
     input: `
       start conso;
-      print conso "true" % 9;
+      conso print "true" % 9;
       end conso;
     `,
     output: RuntimeException,

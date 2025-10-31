@@ -45,9 +45,9 @@ test("test redeclaring & printing variables in different scopes", () => {
     conso a = 4;
     {
       conso a = 90;
-      print conso a;
+      conso print a;
     }
-    print conso a;
+    conso print a;
     end conso;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("90");
@@ -60,9 +60,9 @@ test("test assigning variable in parent scope", () => {
     conso a = 4;
     {
       a = 90;
-      print conso a;
+      conso print a;
     }
-    print conso a;
+    conso print a;
     end conso;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("90");
@@ -74,9 +74,9 @@ test("test accessing variable in parent scope", () => {
     interpreter.interpret(`start conso;
     conso a = 4;
     {
-      print conso a;
+      conso print a;
     }
-    print conso a;
+    conso print a;
     end conso;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("4");
@@ -89,7 +89,7 @@ test("whileStatement test with 2 times loop, should success", () => {
     start conso;
     conso a = 0;
     conso while (a < 2) {
-      print conso "conso";
+      conso print "conso";
       a += 1;
     }
     end conso;`)
@@ -105,7 +105,7 @@ test("whileStatement test with nested loops - 2, should success", () => {
     conso a = 0, b = 0;
     conso while (a < 2) {
       conso while (b < 1) {
-        print conso "conso";
+        conso print "conso";
         b += 1;
       }
       a += 1;
@@ -124,7 +124,7 @@ test("whileStatement test with nested loops - 3, should success", () => {
     conso while (a < 2) {
       conso b = 0;
       conso while (b < 2) {
-        print conso "conso";
+        conso print "conso";
         b += 1;
         conso if (b == 1)
           stop conso;
@@ -145,13 +145,13 @@ test("whileStatement test with nested loops - 4, should success", () => {
     start conso
     conso a = 0;
     conso while (a < 10) {
-      print conso a;
+      conso print a;
       a += 1;
       conso if (a == 6) {
         stop conso;
       }
     }
-    print conso "done";
+    conso print "done";
     end conso
     `)
   ).not.toThrowError();
@@ -169,12 +169,12 @@ test("whileStatement test with nested loops - 5, should success", () => {
     start conso
     conso a = 0;
     conso while (a < 10) {
-      print conso a;
+      conso print a;
       a += 1;
       conso if (a == 6)
         stop conso;
     }
-    print conso "done";
+    conso print "done";
     end conso
     `)
   ).not.toThrowError();
@@ -192,14 +192,14 @@ test("whileStatement test with nested loops - 6, should success", () => {
     start conso
     conso a = 0;
     conso while (a < 10) {
-      print conso a;
+      conso print a;
       a += 1;
       conso if (a == 3) {
         stop conso;
       }
-      print conso "2 baar hi chapunga";
+      conso print "2 baar hi chapunga";
     }
-    print conso "done";
+    conso print "done";
     end conso
     `)
   ).not.toThrowError();
@@ -216,7 +216,7 @@ test("whileStatement test with infinite loop, should throw runtime exception aft
     start conso
     
     conso while (true) {
-      print conso "conso";
+      conso print "conso";
     }
     end conso;
     
@@ -233,13 +233,13 @@ test("if-else ladders one after the other, should be evaluated separately", () =
     start conso
     conso x = 6;
     conso if (x < 5) {
-      print conso "x < 5";
+      conso print "x < 5";
     } conso else-if (x < 8) {
-      print conso "x < 8";
+      conso print "x < 8";
     } conso if (x < 4) {
-      print conso "x < 4";
+      conso print "x < 4";
     } conso else {
-      print conso "x > 4";
+      conso print "x > 4";
     }
     end conso;
     
@@ -255,14 +255,14 @@ test("if-else ladders one after the other, should be evaluated separately", () =
 //     start conso
 //     conso a = 0;
 //     conso while (a < 10) {
-//       print conso a;
+//       conso print a;
 //       a += 1;
 //       conso if (a == 3) {
 //         stop conso;
 //       }
-//       print conso "2 baar hi chapunga";
+//       conso print "2 baar hi chapunga";
 //     }
-//     print conso "done";
+//     conso print "done";
 //     end conso
 //     `);
 // });

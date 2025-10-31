@@ -8,18 +8,18 @@ import Terminal from "./Terminal";
 
 const initialCode = `
 start conso
- print conso "Hello World";
+ conso print "Hello World";
  
   conso a = 3;
   conso b = 0;
 
   conso while (b < 5) {
-    print conso b;
+    conso print b;
 
     conso if (b == a) {
-      print conso "b is equal to a";
+      conso print "b is equal to a";
     } conso else-if (b == 0) {
-      print conso "b is equal to zero";
+      conso print "b is equal to zero";
     }
 
     b += 1;

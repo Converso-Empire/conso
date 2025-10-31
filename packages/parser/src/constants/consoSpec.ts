@@ -5,7 +5,7 @@ export const TokenTypes = {
 
   BYE_conso_TYPE: "end conso",
 
-  BOL_conso_TYPE: "print conso",
+  BOL_conso_TYPE: "conso print",
 
   conso_YE_HAI_TYPE: "conso",
 
@@ -81,7 +81,7 @@ export const SPEC = [
   //Keywords
   { regex: /^\bstart conso\b/, tokenType: TokenTypes.HI_conso_TYPE },
   { regex: /^\bend conso\b/, tokenType: TokenTypes.BYE_conso_TYPE },
-  { regex: /^\bprint conso\b/, tokenType: TokenTypes.BOL_conso_TYPE },
+  { regex: /^\bconso print\b/, tokenType: TokenTypes.BOL_conso_TYPE },
   { regex: /^\bconso else-if\b/, tokenType: TokenTypes.NAHI_TO_conso },
   { regex: /^\bconso else\b/, tokenType: TokenTypes.WARNA_conso },
   { regex: /^\bconso if\b/, tokenType: TokenTypes.AGAR_conso },

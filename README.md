@@ -11,7 +11,7 @@
 
 **"Empire of Innovation, Creativity & Intelligence."**
 
-[Website](http://conversoempire.world/) • [Documentation](https://conso.js.org/) • [GitHub](https://github.com/Converso-Empire/conso)
+[Website](http://conversoempire.world/) • [Documentation](https://conso.conversoempire.world) • [GitHub](https://github.com/Converso-Empire/conso)
 
 </div>
 
@@ -82,7 +82,7 @@ conso --version
 
 ```conso
 start conso
-  print conso "Hello from Converso Empire!";
+  conso print "Hello from Converso Empire!";
 end conso
 ```
 
@@ -100,7 +100,7 @@ Hello from Converso Empire!
 
 ### Try Online
 
-Experiment with Conso in our [Interactive Playground](https://conso.js.org/#playground) — no installation required!
+Experiment with Conso in our [Interactive Playground](https://conso.conversoempire.world#playground) — no installation required!
 
 ---
 
@@ -152,18 +152,18 @@ end conso
 ```
 
 <h3 align="center">Built-ins</h3>
-<p align="center">Use <code>print conso</code> to print anything to console.</p>
+<p align="center">Use <code>conso print</code> to print anything to console.</p>
 
 ```
 
 start conso
-  print conso "Hello World";
+  conso print "Hello World";
   conso a = 10;
   {
     conso b = 20;
-    print conso a + b;
+    conso print a + b;
   }
-  print conso 5, 'ok', null , true , false;
+  conso print 5, 'ok', null , true , false;
 end conso
 ```
 
@@ -175,11 +175,11 @@ end conso
 start conso
   conso a = 10;
   conso if (a < 20) {
-    print conso "a is less than 20";
+    conso print "a is less than 20";
   } conso else-if ( a < 25 ) {
-    print conso "a is less than 25";
+    conso print "a is less than 25";
   } conso else {
-    print conso "a is greater than or equal to 25";
+    conso print "a is greater than or equal to 25";
   }
 end conso
 ```
@@ -195,15 +195,15 @@ start conso
   conso while (a < 10) {
    a += 1;
    conso if (a == 5) {
-    print conso "printing from inside loop: ", a;
+    conso print "printing from inside loop: ", a;
     conso next;
    }
    conso if (a == 6) {
     stop conso;
    }
-   print conso a;
+   conso print a;
   }
-  print conso "done";
+  conso print "done";
 end conso
 ```
 
@@ -241,7 +241,7 @@ npm test
 
 ### Get Help
 
-- **Documentation**: [https://conso.js.org/](https://conso.js.org/)
+- **Documentation**: [https://conso.conversoempire.world](https://conso.conversoempire.world)
 - **Issues**: [GitHub Issues](https://github.com/Converso-Empire/conso/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/Converso-Empire/conso/discussions)
 
@@ -280,7 +280,7 @@ Converso Empire is a technology company focused on innovation, creativity, and i
 
 *"Empire of Innovation, Creativity & Intelligence."*
 
-[Website](http://conversoempire.world/) • [GitHub](https://github.com/Converso-Empire) • [Documentation](https://conso.js.org/)
+[Website](http://conversoempire.world/) • [GitHub](https://github.com/Converso-Empire) • [Documentation](https://conso.conversoempire.world)
 
 </div>
 

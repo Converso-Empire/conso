@@ -65,18 +65,18 @@ end conso
     name: "Built-ins",
     description: (
       <>
-        Use <code className="language-cpp">print conso</code> to print anything to
+        Use <code className="language-cpp">conso print</code> to print anything to
         console.
       </>
     ),
     code: `start conso
-    print conso "Hello World";
+    conso print "Hello World";
     conso a = 10;
     {
        conso b = 20;
-       print conso a + b;
+       conso print a + b;
     }
-    print conso 5, 'ok', null , true , false;
+    conso print 5, 'ok', null , true , false;
 end conso
     `,
   },
@@ -90,11 +90,11 @@ end conso
     code: `start conso
     conso a = 10;
     conso if (a < 20) {
-      print conso "a is less than 20";
+      conso print "a is less than 20";
     } conso else-if ( a < 25 ) {
-      print conso "a is less than 25";
+      conso print "a is less than 25";
     } conso else {
-      print conso "a is greater than or equal to 25";
+      conso print "a is greater than or equal to 25";
     }
 end conso
     `
@@ -112,15 +112,15 @@ end conso
     conso while (a < 10) {
       a += 1;
       conso if (a == 5) {
-        print conso "printing from inside loop: ", a;
+        conso print "printing from inside loop: ", a;
         conso next;
       }
       conso if (a == 6) {
         stop conso;
       }
-      print conso a;
+      conso print a;
     }
-    print conso "done";
+    conso print "done";
 end conso
     `
   }

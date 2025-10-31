@@ -142,7 +142,7 @@ export const NoOutputPositiveTests = [
     conso x = 9;
     conso if (x != 9) {
       x = 5;
-      print conso x;
+      conso print x;
     } conso else (x >= 9);
     end conso;
     `,
@@ -156,7 +156,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a , b;
       a = b = 60;
-      print conso a, b;
+      conso print a, b;
       end conso
     `,
     output: "60 60",
@@ -167,7 +167,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a;
       conso if (a == null) {
-        print conso a;
+        conso print a;
       }
       end conso
     `,
@@ -179,9 +179,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a;
       conso if (a) {
-        print conso a;
+        conso print a;
       } conso else {
-        print conso "not null";
+        conso print "not null";
       }
       end conso
     `,
@@ -192,7 +192,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso if (null == null) {
-        print conso "hai null";
+        conso print "hai null";
       }
       end conso
     `,
@@ -204,7 +204,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a;
       conso if (null == a) {
-        print conso "hai null";
+        conso print "hai null";
       }
       end conso
     `,
@@ -216,7 +216,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = null;
       conso if (null == a) {
-        print conso "hai null";
+        conso print "hai null";
       }
       end conso
     `,
@@ -228,9 +228,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = null;
       conso if ("null" == a) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "not null";
+        conso print "not null";
       }
       end conso
     `,
@@ -242,9 +242,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = "null";
       conso if (null == a) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "not null";
+        conso print "not null";
       }
       end conso
     `,
@@ -256,9 +256,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = "null";
       conso if (null == a) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "not null";
+        conso print "not null";
       }
       end conso
     `,
@@ -271,9 +271,9 @@ export const WithOutputPositiveTests = [
       conso a;
       conso b;
       conso if (a == b) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "nahi null";
+        conso print "nahi null";
       }
       end conso
     `,
@@ -286,9 +286,9 @@ export const WithOutputPositiveTests = [
       conso a;
       conso b = null;
       conso if (a == b) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "nahi null";
+        conso print "nahi null";
       }
       end conso
     `,
@@ -301,9 +301,9 @@ export const WithOutputPositiveTests = [
       conso a;
       conso b = "null";
       conso if (a == b) {
-        print conso "hai null";
+        conso print "hai null";
       } conso else {
-        print conso "nahi null";
+        conso print "nahi null";
       }
       end conso
     `,
@@ -316,9 +316,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = true;
       conso if (true == a) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -330,9 +330,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = false;
       conso if (false == a) {
-        print conso "hai false";
+        conso print "hai false";
       } conso else {
-        print conso "nahi false";
+        conso print "nahi false";
       }
       end conso
     `,
@@ -344,9 +344,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = "true";
       conso if (true == a) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -358,9 +358,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = 7;
       conso if (true == (a > 5)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -372,9 +372,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = 7;
       conso if ("true" == (a > 5)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -386,9 +386,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = true;
       conso if ("true" == (a == true)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -400,9 +400,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = true;
       conso if ((a == true) == (a == true)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -414,9 +414,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a;
       conso if ((a == null) == (a == true)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -428,9 +428,9 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a;
       conso if ((a == null) == (a == true)) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -443,9 +443,9 @@ export const WithOutputPositiveTests = [
       conso a;
       conso b = false;
       conso if (a == b) {
-        print conso "hai true";
+        conso print "hai true";
       } conso else {
-        print conso "nahi true";
+        conso print "nahi true";
       }
       end conso
     `,
@@ -458,9 +458,9 @@ export const WithOutputPositiveTests = [
       conso a = false;
       conso b = false;
       conso if (a == b) {
-        print conso "hai false";
+        conso print "hai false";
       } conso else {
-        print conso "nahi false";
+        conso print "nahi false";
       }
       end conso
     `,
@@ -473,9 +473,9 @@ export const WithOutputPositiveTests = [
       conso a = "false";
       conso b = false;
       conso if (a == b) {
-        print conso "hai false";
+        conso print "hai false";
       } conso else {
-        print conso "nahi false";
+        conso print "nahi false";
       }
       end conso
     `,
@@ -486,7 +486,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso
       conso a = 1.2, b = 2;
-      print conso a + b;
+      conso print a + b;
       end conso
     `,
     output: "3.2"
@@ -496,7 +496,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso
       conso a = 1.2, b = 2.3;
-      print conso a + b;
+      conso print a + b;
       end conso
     `,
     output: "3.5"
@@ -506,7 +506,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a = 2, b = 60;
-      print conso (a * (4 + 8) + 10), b;
+      conso print (a * (4 + 8) + 10), b;
       end conso
     `,
     output: "34 60",
@@ -518,7 +518,7 @@ export const WithOutputPositiveTests = [
       conso a = 2, b = 60;
 
       a = b + 3;
-      print conso a, b;
+      conso print a, b;
       end conso
     `,
     output: "63 60",
@@ -527,7 +527,7 @@ export const WithOutputPositiveTests = [
     name: "printStatement test with multiple expressions & without any variables, should success",
     input: `
       start conso;
-      print conso "hello", true, false;
+      conso print "hello", true, false;
       end conso
     `,
     output: "hello true false",
@@ -536,7 +536,7 @@ export const WithOutputPositiveTests = [
     name: "printStatement test with null, should success",
     input: `
       start conso;
-      print conso null;
+      conso print null;
       end conso;
     `,
     output: "null",
@@ -545,7 +545,7 @@ export const WithOutputPositiveTests = [
     name: "printStatement test with null as second parameter, should success",
     input: `
       start conso;
-      print conso 10, null;
+      conso print 10, null;
       end conso;
     `,
     output: "10 null",
@@ -554,7 +554,7 @@ export const WithOutputPositiveTests = [
     name: "printStatement test with string concatenation, should success",
     input: `
       start conso;
-      print conso "hello" + "crap";
+      conso print "hello" + "crap";
       end conso;
     `,
     output: "hellocrap",
@@ -564,7 +564,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a = 70;
-      print conso 6*5, null, "jamtara", a;
+      conso print 6*5, null, "jamtara", a;
       end conso;
     `,
     output: "30 null jamtara 70",
@@ -574,7 +574,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a;
-      print conso a;
+      conso print a;
       end conso;
     `,
     output: "null",
@@ -583,7 +583,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with string "undefined", should success`,
     input: `
       start conso;
-      print conso "undefined";
+      conso print "undefined";
       end conso;
     `,
     output: "undefined",
@@ -593,7 +593,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a;
-      print conso a;
+      conso print a;
       end conso;
     `,
     output: "null",
@@ -603,7 +603,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a = true;
-      print conso a;
+      conso print a;
       end conso;
     `,
     output: "true",
@@ -613,7 +613,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a = false;
-      print conso a;
+      conso print a;
       end conso;
     `,
     output: "false",
@@ -623,7 +623,7 @@ export const WithOutputPositiveTests = [
     input: `
       start conso;
       conso a;
-      print conso a = 90;
+      conso print a = 90;
       end conso;
     `,
     output: "90",
@@ -632,7 +632,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with logical AND, should success`,
     input: `
       start conso;
-      print conso 9 && 10;
+      conso print 9 && 10;
       end conso;
     `,
     output: "10",
@@ -641,7 +641,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with logical OR, should success`,
     input: `
       start conso;
-      print conso 9 || 10;
+      conso print 9 || 10;
       end conso;
     `,
     output: "9",
@@ -650,7 +650,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with logical - 1, should success`,
     input: `
       start conso;
-      print conso false && true;
+      conso print false && true;
       end conso;
     `,
     output: "false",
@@ -660,7 +660,7 @@ export const WithOutputPositiveTests = [
     input: `
     start conso;
     conso a = true;
-    print conso a && false;
+    conso print a && false;
     end conso;
     `,
     output: "false",
@@ -670,7 +670,7 @@ export const WithOutputPositiveTests = [
     input: `
     start conso;
     conso a = true;
-    print conso a && true;
+    conso print a && true;
     end conso;
     `,
     output: "true",
@@ -679,7 +679,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with equality, should success`,
     input: `
       start conso;
-      print conso 9 == 10;
+      conso print 9 == 10;
       end conso;
     `,
     output: "false",
@@ -688,7 +688,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with inequality, should success`,
     input: `
       start conso;
-      print conso 9 != 10;
+      conso print 9 != 10;
       end conso;
     `,
     output: "true",
@@ -697,7 +697,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with logical OR, should success`,
     input: `
       start conso;
-      print conso 9 || 10;
+      conso print 9 || 10;
       end conso;
     `,
     output: "9",
@@ -706,7 +706,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with logical OR - 2, should success`,
     input: `
       start conso;
-      print conso false || true;
+      conso print false || true;
       end conso;
     `,
     output: "true",
@@ -715,7 +715,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with boolean true false and logical, should success`,
     input: `
       start conso;
-      print conso true != 10;
+      conso print true != 10;
       end conso;
     `,
     output: "true",
@@ -724,7 +724,7 @@ export const WithOutputPositiveTests = [
     name: `printStatement test with boolean true and string "true", should success`,
     input: `
       start conso;
-      print conso "true" == true;
+      conso print "true" == true;
       end conso;
     `,
     output: "false",
@@ -736,7 +736,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = 0;
       conso while (a < 1) {
-        print conso "conso";
+        conso print "conso";
         a += 1;
       }
       end conso;
@@ -749,7 +749,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso while (true) 
         stop conso;
-      print conso "end";
+      conso print "end";
       end conso;
     `,
     output: "end",
@@ -762,7 +762,7 @@ export const WithOutputPositiveTests = [
       conso while (a < 2) {
         conso while (true)
           stop conso;
-        print conso "hello";
+        conso print "hello";
         conso if (true)
           stop conso;
       }
@@ -776,7 +776,7 @@ export const WithOutputPositiveTests = [
       start conso;
       conso a = 0;
       conso while (a < 2) {
-        print conso "hello";
+        conso print "hello";
         conso if (true)
           stop conso;
         stop conso;
@@ -792,7 +792,7 @@ export const WithOutputPositiveTests = [
     input: `
     start conso
     conso if (true) {
-      print conso "conso";
+      conso print "conso";
     }
     end conso;
     `,
@@ -803,9 +803,9 @@ export const WithOutputPositiveTests = [
     input: `
     start conso
     conso if (true) {
-      print conso "true";
+      conso print "true";
     } conso else {
-      print conso "false";
+      conso print "false";
     }
     end conso;
     `,
@@ -818,7 +818,7 @@ export const WithOutputPositiveTests = [
     conso x = 9;
     conso if (x >= 9) {
       x = 5;
-      print conso x;
+      conso print x;
     } 
     end conso;
     `,
@@ -830,9 +830,9 @@ export const WithOutputPositiveTests = [
     input: `
     start conso
     conso if (false) {
-      print conso "false";
+      conso print "false";
     } conso else-if (true) {
-      print conso "true";
+      conso print "true";
     }
     end conso;
     `,
@@ -844,13 +844,13 @@ export const WithOutputPositiveTests = [
     start conso
     conso x = 10;
     conso if (x < 5) {
-      print conso "x < 5";
+      conso print "x < 5";
     } conso else-if (x < 8) {
-      print conso "x < 8";
+      conso print "x < 8";
     } conso else-if (x < 12) {
-      print conso "x < 12";
+      conso print "x < 12";
     } conso else-if (x < 15) {
-      print conso "x < 15";
+      conso print "x < 15";
     }
     end conso;
     `,
@@ -862,12 +862,12 @@ export const WithOutputPositiveTests = [
     start conso
     conso a = 15;
     conso if (a < 0) {
-      print conso "a < 0";
+      conso print "a < 0";
     } conso else-if (a > 0) {
       conso if (a < 10) {
-        print conso "a < 10";
+        conso print "a < 10";
       } conso else-if (a < 20) {
-        print conso "a < 20";
+        conso print "a < 20";
       }
     }
     end conso
@@ -880,13 +880,13 @@ export const WithOutputPositiveTests = [
     start conso
     conso x = 15;
     conso if (x < 5) {
-      print conso "x < 5";
+      conso print "x < 5";
     } conso else-if (x < 8) {
-      print conso "x < 8";
+      conso print "x < 8";
     } conso else-if (x < 12) {
-      print conso "x < 12";
+      conso print "x < 12";
     } conso else {
-      print conso "x > 12";
+      conso print "x > 12";
     }
     end conso;
     `,
@@ -898,9 +898,9 @@ export const WithOutputPositiveTests = [
     input: `
         start conso
         conso if (true && false) {
-          print conso "true";
+          conso print "true";
         } conso else {
-          print conso "false";
+          conso print "false";
         }
         end conso;
       `,
@@ -911,7 +911,7 @@ export const WithOutputPositiveTests = [
     name: `modulus operator "%" test, should success`,
     input: `
         start conso
-        print conso 90 % 9;
+        conso print 90 % 9;
         end conso;
       `,
     output: `0`,
@@ -920,7 +920,7 @@ export const WithOutputPositiveTests = [
     name: `modulus operator "%" test - 2, should success`,
     input: `
         start conso
-        print conso 27 % 5;
+        conso print 27 % 5;
         end conso;
       `,
     output: `2`,
@@ -929,7 +929,7 @@ export const WithOutputPositiveTests = [
     name: `modulus operator "%" test - 2, should success`,
     input: `
         start conso
-        print conso 5 % 20;
+        conso print 5 % 20;
         end conso;
       `,
     output: `5`,
@@ -948,7 +948,7 @@ export const WithOutputPositiveTests = [
         }
         a -= 1;
       }
-      print conso step;
+      conso print step;
       end conso;
     `,
     output: "3",
@@ -967,9 +967,9 @@ export const WithOutputPositiveTests = [
         }
         a -= 1;
         conso next;
-        print conso "oye oye oye.. yha tk nhi aana tha conso";
+        conso print "oye oye oye.. yha tk nhi aana tha conso";
       }
-      print conso step;
+      conso print step;
       end conso;
     `,
     output: "3",
@@ -991,7 +991,7 @@ export const WithOutputPositiveTests = [
         conso if (step == 1) conso next
         step += 1;
       }
-      print conso step;
+      conso print step;
       end conso;
     `,
     output: "1",

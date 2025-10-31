@@ -69,7 +69,7 @@ function _runNegativeTests(testCase: negTestObjType) {
 //   const parser = consoModule.getParser();
 //   console.debug(JSON.stringify(parser.parse(`
 //   start conso
-//       print conso 9 == 90;
+//       conso print 9 == 90;
 //       end conso
 //   `)));
 // })

@@ -76,7 +76,7 @@ export const NegativeStatementTests = [
     name: "empty print statement, should throw an exception",
     input: `
         start conso
-        print conso ;
+        conso print ;
         end conso
       `,
     output: SyntaxError,
@@ -85,7 +85,7 @@ export const NegativeStatementTests = [
     name: "print statement without semi colon, should throw an exception",
     input: `
         start conso
-        print conso 478
+        conso print 478
         end conso
       `,
     output: SyntaxError,
@@ -94,7 +94,7 @@ export const NegativeStatementTests = [
     name: "print statement with space separated values, should throw an exception",
     input: `
         start conso
-        print conso true false;
+        conso print true false;
         end conso
       `,
     output: SyntaxError,
@@ -103,7 +103,7 @@ export const NegativeStatementTests = [
     name: "print statement test with unknown thing printing, should throw an exception",
     input: `
         start conso
-        print conso ~!*;
+        conso print ~!*;
         end conso
       `,
     output: SyntaxError,
@@ -112,7 +112,7 @@ export const NegativeStatementTests = [
     name: "print statement test with no other token, should throw an exception",
     input: `
         start conso
-        print conso a
+        conso print a
       `,
     output: SyntaxError,
   },
