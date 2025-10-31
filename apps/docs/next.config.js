@@ -1,6 +1,12 @@
-// Next.js configuration for Conso documentation
-// https://nextjs.org/docs/api-reference/next.config.js/introduction
-
-module.exports = {
-  // Your existing module.exports
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  transpilePackages: ['conso-interpreter', 'conso-parser'],
 };
+
+module.exports = nextConfig;
