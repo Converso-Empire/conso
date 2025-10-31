@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import interpreter from "conso-interpreter";
 
-import { sendEvents } from "../../helpers";
-
 import CodeEditor from "./CodeEditor";
 import Terminal from "./Terminal";
 
@@ -61,15 +59,12 @@ const Code = (props: Props) => {
       }
     }
 
-    sendEvents("CodeExecuted", {success: isExecusionSuccess});
-
     setIsSuccess(isExecusionSuccess);
     setOutput(outputList);
     console.log = orignalConsoleLog;
   };
 
   const clearCode = () => {
-    sendEvents("CodeCleared");
     setCode("");
     setIsSuccess(null);
     setOutput([]);
