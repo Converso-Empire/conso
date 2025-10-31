@@ -1,4 +1,4 @@
-import { NodeType } from "converso-conso-parser";
+import { NodeType } from "conso-parser";
 
 import { RuntimeException } from "../../src";
 import Scope from "../../src/components/scope";
