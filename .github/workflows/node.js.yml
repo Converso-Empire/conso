@@ -119,7 +119,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/docs
-          vercel-args: '--prod'
+          vercel-args: '--prod --force'
       
       - name: Create Release Summary
         if: success()
