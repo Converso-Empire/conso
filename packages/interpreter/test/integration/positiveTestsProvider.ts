@@ -3,8 +3,8 @@ export const NoOutputPositiveTests = [
   {
     name: "interpreter empty init statement test, should success",
     input: `
-      hi conso
-      bye conso
+      start conso
+      end conso
     `,
   },
   {
@@ -12,139 +12,139 @@ export const NoOutputPositiveTests = [
     input: `
       some random characters
       random random random
-      hi conso
-      bye conso
+      start conso
+      end conso
     `,
   },
   // empty statement tests
   {
     name: "interpreter empty statement test, should success",
     input: `
-      hi conso
+      start conso
       ;
-      bye conso
+      end conso
     `,
   },
   {
     name: "interpreter multiple empty statements test, should success",
     input: `
-      hi conso
+      start conso
       ;
       ;
       ;;
-      bye conso
+      end conso
     `,
   },
   // block statement tests
   {
     name: "interpreter block statement test with empty block, should success",
     input: `
-      hi conso
+      start conso
       {};
-      bye conso
+      end conso
     `,
   },
   {
     name: "interpreter block statement test with variable statement inside, should success",
     input: `
-      hi conso
+      start conso
       {
-        conso ye hai a = 4;
+        conso a = 4;
       }
-      bye conso
+      end conso
     `,
   },
   // variable statement test
   {
     name: "interpreter variable statement test with basic variable declaration, should success",
     input: `
-      hi conso
-      conso ye hai a, b, c;
-      bye conso
+      start conso
+      conso a, b, c;
+      end conso
     `,
   },
   {
     name: "interpreter variable statement test with basic variable declaration and initialisation, should success",
     input: `
-      hi conso
-      conso ye hai a = 10, b = "crap";
-      bye conso
+      start conso
+      conso a = 10, b = "crap";
+      end conso
     `,
   },
   {
     name: "interpreter variable statement test with multiple variable initialisation, should success",
     input: `
-      hi conso
-      conso ye hai a = 10, b = 5;
-      bye conso
+      start conso
+      conso a = 10, b = 5;
+      end conso
     `,
   },
   {
     name: "interpreter variable statement test with variable initialisation with some expression, should success",
     input: `
-      hi conso
-      conso ye hai a = 7 + 90;
-      bye conso
+      start conso
+      conso a = 7 + 90;
+      end conso
     `,
   },
   // assignment expression tests
   {
     name: "simple assignment expression test with only one identifer, should success",
     input: `
-      hi conso
-      conso ye hai a = true;
+      start conso
+      conso a = true;
       a = 4;
-      bye conso
+      end conso
     `,
   },
   {
     name: "complex assignment expression test with only one identifer, should success",
     input: `
-      hi conso
-      conso ye hai a = 2;
+      start conso
+      conso a = 2;
       a *= 4;
-      bye conso
+      end conso
     `,
   },
   // paranthesized expression tests
   {
     name: "paranthesized expression test with one parenthesis and simple expression, should success",
     input: `
-      hi conso
-      conso ye hai a = 2;
+      start conso
+      conso a = 2;
       (a + 4);
-      bye conso
+      end conso
     `,
   },
   {
     name: "paranthesized expression test with one parenthesis and complex expression, should success",
     input: `
-      hi conso
-      conso ye hai a = 2;
+      start conso
+      conso a = 2;
       (a + 4) * 10 + (5 - 4);
-      bye conso
+      end conso
     `,
   },
   {
     name: "paranthesized expression test with multiple parenthesis, should success",
     input: `
-      hi conso
-      conso ye hai a = 2;
+      start conso
+      conso a = 2;
       (a * (4 + 8) + 10);
-      bye conso
+      end conso
     `,
   },
   // if statement test
   {
     name: "paranthesized expression test with multiple parenthesis, should success",
     input: `
-    hi conso
-    conso ye hai x = 9;
-    agar conso (x != 9) {
+    start conso
+    conso x = 9;
+    conso if (x != 9) {
       x = 5;
-      bol conso x;
-    } warna conso (x >= 9);
-    bye conso;
+      print conso x;
+    } conso else (x >= 9);
+    end conso;
     `,
   },
 ];
@@ -153,579 +153,579 @@ export const WithOutputPositiveTests = [
   {
     name: "variable assignment test with multiple variables, should success",
     input: `
-      hi conso;
-      conso ye hai a , b;
+      start conso;
+      conso a , b;
       a = b = 60;
-      bol conso a, b;
-      bye conso
+      print conso a, b;
+      end conso
     `,
     output: "60 60",
   },
   {
-    name: `binaryExpression print test with nalla and "==", should success`,
+    name: `binaryExpression print test with null and "==", should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      agar conso (a == nalla) {
-        bol conso a;
+      start conso;
+      conso a;
+      conso if (a == null) {
+        print conso a;
       }
-      bye conso
+      end conso
     `,
-    output: "nalla",
+    output: "null",
   },
   {
-    name: `binaryExpression print test with nalla without any operator, should success`,
+    name: `binaryExpression print test with null without any operator, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      agar conso (a) {
-        bol conso a;
-      } warna conso {
-        bol conso "not nalla";
+      start conso;
+      conso a;
+      conso if (a) {
+        print conso a;
+      } conso else {
+        print conso "not null";
       }
-      bye conso
+      end conso
     `,
-    output: "not nalla",
+    output: "not null",
   },
   {
-    name: `binaryExpression print test - comparing nalla with nalla "==", should success`,
+    name: `binaryExpression print test - comparing null with null "==", should success`,
     input: `
-      hi conso;
-      agar conso (nalla == nalla) {
-        bol conso "hai nalla";
+      start conso;
+      conso if (null == null) {
+        print conso "hai null";
       }
-      bye conso
+      end conso
     `,
-    output: "hai nalla",
+    output: "hai null",
   },
   {
-    name: `binaryExpression print test with comparing nalla with var "a", should success`,
+    name: `binaryExpression print test with comparing null with var "a", should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      agar conso (nalla == a) {
-        bol conso "hai nalla";
+      start conso;
+      conso a;
+      conso if (null == a) {
+        print conso "hai null";
       }
-      bye conso
+      end conso
     `,
-    output: "hai nalla",
+    output: "hai null",
   },
   {
-    name: `binaryExpression print test with comparing nalla with var "a" explicit initialization, should success`,
+    name: `binaryExpression print test with comparing null with var "a" explicit initialization, should success`,
     input: `
-      hi conso;
-      conso ye hai a = nalla;
-      agar conso (nalla == a) {
-        bol conso "hai nalla";
+      start conso;
+      conso a = null;
+      conso if (null == a) {
+        print conso "hai null";
       }
-      bye conso
+      end conso
     `,
-    output: "hai nalla",
+    output: "hai null",
   },
   {
-    name: `binaryExpression print test with comparing nalla with string nalla, should success`,
+    name: `binaryExpression print test with comparing null with string null, should success`,
     input: `
-      hi conso;
-      conso ye hai a = nalla;
-      agar conso ("nalla" == a) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "not nalla";
+      start conso;
+      conso a = null;
+      conso if ("null" == a) {
+        print conso "hai null";
+      } conso else {
+        print conso "not null";
       }
-      bye conso
+      end conso
     `,
-    output: "not nalla",
+    output: "not null",
   },
   {
-    name: `binaryExpression print test with comparing nalla with string nalla, should success`,
+    name: `binaryExpression print test with comparing null with string null, should success`,
     input: `
-      hi conso;
-      conso ye hai a = "nalla";
-      agar conso (nalla == a) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "not nalla";
+      start conso;
+      conso a = "null";
+      conso if (null == a) {
+        print conso "hai null";
+      } conso else {
+        print conso "not null";
       }
-      bye conso
+      end conso
     `,
-    output: "not nalla",
+    output: "not null",
   },
   {
-    name: `binaryExpression print test with comparing nalla with string null, should success`,
+    name: `binaryExpression print test with comparing null with string null, should success`,
     input: `
-      hi conso;
-      conso ye hai a = "null";
-      agar conso (nalla == a) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "not nalla";
+      start conso;
+      conso a = "null";
+      conso if (null == a) {
+        print conso "hai null";
+      } conso else {
+        print conso "not null";
       }
-      bye conso
+      end conso
     `,
-    output: "not nalla",
+    output: "not null",
   },
   {
-    name: `binaryExpression print test with nalla var "a" & "b" - 0, should success`,
+    name: `binaryExpression print test with null var "a" & "b" - 0, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      conso ye hai b;
-      agar conso (a == b) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "nahi nalla";
+      start conso;
+      conso a;
+      conso b;
+      conso if (a == b) {
+        print conso "hai null";
+      } conso else {
+        print conso "nahi null";
       }
-      bye conso
+      end conso
     `,
-    output: "hai nalla",
+    output: "hai null",
   },
   {
-    name: `binaryExpression print test with nalla var "a" & "b" - 1, should success`,
+    name: `binaryExpression print test with null var "a" & "b" - 1, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      conso ye hai b = nalla;
-      agar conso (a == b) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "nahi nalla";
+      start conso;
+      conso a;
+      conso b = null;
+      conso if (a == b) {
+        print conso "hai null";
+      } conso else {
+        print conso "nahi null";
       }
-      bye conso
+      end conso
     `,
-    output: "hai nalla",
+    output: "hai null",
   },
   {
-    name: `binaryExpression print test with nalla var "a" & "b" -2, should success`,
+    name: `binaryExpression print test with null var "a" & "b" -2, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      conso ye hai b = "nalla";
-      agar conso (a == b) {
-        bol conso "hai nalla";
-      } warna conso {
-        bol conso "nahi nalla";
+      start conso;
+      conso a;
+      conso b = "null";
+      conso if (a == b) {
+        print conso "hai null";
+      } conso else {
+        print conso "nahi null";
       }
-      bye conso
+      end conso
     `,
-    output: "nahi nalla",
+    output: "nahi null",
   },
   // Boolean test
   {
     name: `binaryExpression print test with boolean expression - true, should success`,
     input: `
-      hi conso;
-      conso ye hai a = true;
-      agar conso (true == a) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = true;
+      conso if (true == a) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "hai true",
   },
   {
     name: `binaryExpression print test with boolean expression - false, should success`,
     input: `
-      hi conso;
-      conso ye hai a = false;
-      agar conso (false == a) {
-        bol conso "hai false";
-      } warna conso {
-        bol conso "nahi false";
+      start conso;
+      conso a = false;
+      conso if (false == a) {
+        print conso "hai false";
+      } conso else {
+        print conso "nahi false";
       }
-      bye conso
+      end conso
     `,
     output: "hai false",
   },
   {
     name: `binaryExpression print test with boolean expression - true with string true, should success`,
     input: `
-      hi conso;
-      conso ye hai a = "true";
-      agar conso (true == a) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = "true";
+      conso if (true == a) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 7;
-      agar conso (true == (a > 5)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = 7;
+      conso if (true == (a > 5)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "hai true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression & string "true", should success`,
     input: `
-      hi conso;
-      conso ye hai a = 7;
-      agar conso ("true" == (a > 5)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = 7;
+      conso if ("true" == (a > 5)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression & two expressions, should success`,
     input: `
-      hi conso;
-      conso ye hai a = true;
-      agar conso ("true" == (a == true)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = true;
+      conso if ("true" == (a == true)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression -3, should success`,
     input: `
-      hi conso;
-      conso ye hai a = true;
-      agar conso ((a == true) == (a == true)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a = true;
+      conso if ((a == true) == (a == true)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "hai true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression - 4, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      agar conso ((a == nalla) == (a == true)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a;
+      conso if ((a == null) == (a == true)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression - 5, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      agar conso ((a == nalla) == (a == true)) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a;
+      conso if ((a == null) == (a == true)) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - true expression - 5, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      conso ye hai b = false;
-      agar conso (a == b) {
-        bol conso "hai true";
-      } warna conso {
-        bol conso "nahi true";
+      start conso;
+      conso a;
+      conso b = false;
+      conso if (a == b) {
+        print conso "hai true";
+      } conso else {
+        print conso "nahi true";
       }
-      bye conso
+      end conso
     `,
     output: "nahi true",
   },
   {
     name: `binaryExpression print test with boolean expression - false variables comparison, should success`,
     input: `
-      hi conso;
-      conso ye hai a = false;
-      conso ye hai b = false;
-      agar conso (a == b) {
-        bol conso "hai false";
-      } warna conso {
-        bol conso "nahi false";
+      start conso;
+      conso a = false;
+      conso b = false;
+      conso if (a == b) {
+        print conso "hai false";
+      } conso else {
+        print conso "nahi false";
       }
-      bye conso
+      end conso
     `,
     output: "hai false",
   },
   {
     name: `binaryExpression print test with boolean expression - false variables comparison with string false, should success`,
     input: `
-      hi conso;
-      conso ye hai a = "false";
-      conso ye hai b = false;
-      agar conso (a == b) {
-        bol conso "hai false";
-      } warna conso {
-        bol conso "nahi false";
+      start conso;
+      conso a = "false";
+      conso b = false;
+      conso if (a == b) {
+        print conso "hai false";
+      } conso else {
+        print conso "nahi false";
       }
-      bye conso
+      end conso
     `,
     output: "nahi false",
   },
   {
     name: "float value addition with integer value test, should success",
     input: `
-      hi conso
-      conso ye hai a = 1.2, b = 2;
-      bol conso a + b;
-      bye conso
+      start conso
+      conso a = 1.2, b = 2;
+      print conso a + b;
+      end conso
     `,
     output: "3.2"
   },
   {
     name: "float value addition with float value value test, should success",
     input: `
-      hi conso
-      conso ye hai a = 1.2, b = 2.3;
-      bol conso a + b;
-      bye conso
+      start conso
+      conso a = 1.2, b = 2.3;
+      print conso a + b;
+      end conso
     `,
     output: "3.5"
   },
   {
     name: "printStatement test with multiple expressions, should success",
     input: `
-      hi conso;
-      conso ye hai a = 2, b = 60;
-      bol conso (a * (4 + 8) + 10), b;
-      bye conso
+      start conso;
+      conso a = 2, b = 60;
+      print conso (a * (4 + 8) + 10), b;
+      end conso
     `,
     output: "34 60",
   },
   {
     name: "printStatement test with multiple expressions and re assigning value of one variable, should success",
     input: `
-      hi conso;
-      conso ye hai a = 2, b = 60;
+      start conso;
+      conso a = 2, b = 60;
 
       a = b + 3;
-      bol conso a, b;
-      bye conso
+      print conso a, b;
+      end conso
     `,
     output: "63 60",
   },
   {
     name: "printStatement test with multiple expressions & without any variables, should success",
     input: `
-      hi conso;
-      bol conso "hello", true, false;
-      bye conso
+      start conso;
+      print conso "hello", true, false;
+      end conso
     `,
     output: "hello true false",
   },
   {
-    name: "printStatement test with nalla, should success",
+    name: "printStatement test with null, should success",
     input: `
-      hi conso;
-      bol conso nalla;
-      bye conso;
+      start conso;
+      print conso null;
+      end conso;
     `,
-    output: "nalla",
+    output: "null",
   },
   {
-    name: "printStatement test with nalla as second parameter, should success",
+    name: "printStatement test with null as second parameter, should success",
     input: `
-      hi conso;
-      bol conso 10, nalla;
-      bye conso;
+      start conso;
+      print conso 10, null;
+      end conso;
     `,
-    output: "10 nalla",
+    output: "10 null",
   },
   {
     name: "printStatement test with string concatenation, should success",
     input: `
-      hi conso;
-      bol conso "hello" + "crap";
-      bye conso;
+      start conso;
+      print conso "hello" + "crap";
+      end conso;
     `,
     output: "hellocrap",
   },
   {
-    name: "printStatement test with multiple expresions including nalla, should success",
+    name: "printStatement test with multiple expresions including null, should success",
     input: `
-      hi conso;
-      conso ye hai a = 70;
-      bol conso 6*5, nalla, "jamtara", a;
-      bye conso;
+      start conso;
+      conso a = 70;
+      print conso 6*5, null, "jamtara", a;
+      end conso;
     `,
-    output: "30 nalla jamtara 70",
+    output: "30 null jamtara 70",
   },
   {
-    name: "printStatement test with nalla variable, should success",
+    name: "printStatement test with null variable, should success",
     input: `
-      hi conso;
-      conso ye hai a;
-      bol conso a;
-      bye conso;
+      start conso;
+      conso a;
+      print conso a;
+      end conso;
     `,
-    output: "nalla",
+    output: "null",
   },
   {
     name: `printStatement test with string "undefined", should success`,
     input: `
-      hi conso;
-      bol conso "undefined";
-      bye conso;
+      start conso;
+      print conso "undefined";
+      end conso;
     `,
     output: "undefined",
   },
   {
-    name: `printStatement test with nalla variable, should success`,
+    name: `printStatement test with null variable, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      bol conso a;
-      bye conso;
+      start conso;
+      conso a;
+      print conso a;
+      end conso;
     `,
-    output: "nalla",
+    output: "null",
   },
   {
     name: `printStatement test with true variable, should success`,
     input: `
-      hi conso;
-      conso ye hai a = true;
-      bol conso a;
-      bye conso;
+      start conso;
+      conso a = true;
+      print conso a;
+      end conso;
     `,
     output: "true",
   },
   {
     name: `printStatement test with false variable, should success`,
     input: `
-      hi conso;
-      conso ye hai a = false;
-      bol conso a;
-      bye conso;
+      start conso;
+      conso a = false;
+      print conso a;
+      end conso;
     `,
     output: "false",
   },
   {
     name: `printStatement test with assignment expression, should success`,
     input: `
-      hi conso;
-      conso ye hai a;
-      bol conso a = 90;
-      bye conso;
+      start conso;
+      conso a;
+      print conso a = 90;
+      end conso;
     `,
     output: "90",
   },
   {
     name: `printStatement test with logical AND, should success`,
     input: `
-      hi conso;
-      bol conso 9 && 10;
-      bye conso;
+      start conso;
+      print conso 9 && 10;
+      end conso;
     `,
     output: "10",
   },
   {
     name: `printStatement test with logical OR, should success`,
     input: `
-      hi conso;
-      bol conso 9 || 10;
-      bye conso;
+      start conso;
+      print conso 9 || 10;
+      end conso;
     `,
     output: "9",
   },
   {
     name: `printStatement test with logical - 1, should success`,
     input: `
-      hi conso;
-      bol conso false && true;
-      bye conso;
+      start conso;
+      print conso false && true;
+      end conso;
     `,
     output: "false",
   },
   {
     name: `printStatement test with logical - 2, should success`,
     input: `
-    hi conso;
-    conso ye hai a = true;
-    bol conso a && false;
-    bye conso;
+    start conso;
+    conso a = true;
+    print conso a && false;
+    end conso;
     `,
     output: "false",
   },
   {
     name: `printStatement test with logical - 3, should success`,
     input: `
-    hi conso;
-    conso ye hai a = true;
-    bol conso a && true;
-    bye conso;
+    start conso;
+    conso a = true;
+    print conso a && true;
+    end conso;
     `,
     output: "true",
   },
   {
     name: `printStatement test with equality, should success`,
     input: `
-      hi conso;
-      bol conso 9 == 10;
-      bye conso;
+      start conso;
+      print conso 9 == 10;
+      end conso;
     `,
     output: "false",
   },
   {
     name: `printStatement test with inequality, should success`,
     input: `
-      hi conso;
-      bol conso 9 != 10;
-      bye conso;
+      start conso;
+      print conso 9 != 10;
+      end conso;
     `,
     output: "true",
   },
   {
     name: `printStatement test with logical OR, should success`,
     input: `
-      hi conso;
-      bol conso 9 || 10;
-      bye conso;
+      start conso;
+      print conso 9 || 10;
+      end conso;
     `,
     output: "9",
   },
   {
     name: `printStatement test with logical OR - 2, should success`,
     input: `
-      hi conso;
-      bol conso false || true;
-      bye conso;
+      start conso;
+      print conso false || true;
+      end conso;
     `,
     output: "true",
   },
   {
     name: `printStatement test with boolean true false and logical, should success`,
     input: `
-      hi conso;
-      bol conso true != 10;
-      bye conso;
+      start conso;
+      print conso true != 10;
+      end conso;
     `,
     output: "true",
   },
   {
     name: `printStatement test with boolean true and string "true", should success`,
     input: `
-      hi conso;
-      bol conso "true" == true;
-      bye conso;
+      start conso;
+      print conso "true" == true;
+      end conso;
     `,
     output: "false",
   },
@@ -733,56 +733,56 @@ export const WithOutputPositiveTests = [
   {
     name: `whileStatement test with 1 time loop, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 0;
-      jab tak conso (a < 1) {
-        bol conso "conso";
+      start conso;
+      conso a = 0;
+      conso while (a < 1) {
+        print conso "conso";
         a += 1;
       }
-      bye conso;
+      end conso;
     `,
     output: "conso",
   },
   {
     name: `whileStatement test with single break statement, should success`,
     input: `
-      hi conso;
-      jab tak conso (true) 
-        bas kar conso;
-      bol conso "end";
-      bye conso;
+      start conso;
+      conso while (true) 
+        stop conso;
+      print conso "end";
+      end conso;
     `,
     output: "end",
   },
   {
     name: `whileStatement test with nested loops, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 0;
-      jab tak conso (a < 2) {
-        jab tak conso (true)
-          bas kar conso;
-        bol conso "hello";
-        agar conso (true)
-          bas kar conso;
+      start conso;
+      conso a = 0;
+      conso while (a < 2) {
+        conso while (true)
+          stop conso;
+        print conso "hello";
+        conso if (true)
+          stop conso;
       }
-      bye conso;
+      end conso;
     `,
     output: "hello",
   },
   {
     name: `whileStatement with multiple breaks, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 0;
-      jab tak conso (a < 2) {
-        bol conso "hello";
-        agar conso (true)
-          bas kar conso;
-        bas kar conso;
-        bas kar conso;
+      start conso;
+      conso a = 0;
+      conso while (a < 2) {
+        print conso "hello";
+        conso if (true)
+          stop conso;
+        stop conso;
+        stop conso;
       }
-      bye conso;
+      end conso;
     `,
     output: "hello",
   },
@@ -790,37 +790,37 @@ export const WithOutputPositiveTests = [
   {
     name: `if statement success test - 1: only if, should success`,
     input: `
-    hi conso
-    agar conso (true) {
-      bol conso "conso";
+    start conso
+    conso if (true) {
+      print conso "conso";
     }
-    bye conso;
+    end conso;
     `,
     output: "conso",
   },
   {
     name: `if statement success test - 2: if else both, should success`,
     input: `
-    hi conso
-    agar conso (true) {
-      bol conso "true";
-    } warna conso {
-      bol conso "false";
+    start conso
+    conso if (true) {
+      print conso "true";
+    } conso else {
+      print conso "false";
     }
-    bye conso;
+    end conso;
     `,
     output: "true",
   },
   {
     name: `if statement success test - 3: if only with comarison condn, should success`,
     input: `
-    hi conso
-    conso ye hai x = 9;
-    agar conso (x >= 9) {
+    start conso
+    conso x = 9;
+    conso if (x >= 9) {
       x = 5;
-      bol conso x;
+      print conso x;
     } 
-    bye conso;
+    end conso;
     `,
     output: "5",
   },
@@ -828,67 +828,67 @@ export const WithOutputPositiveTests = [
   {
     name: `else-if statement success test - 1: if with one else-if, should success`,
     input: `
-    hi conso
-    agar conso (false) {
-      bol conso "false";
-    } nahi to conso (true) {
-      bol conso "true";
+    start conso
+    conso if (false) {
+      print conso "false";
+    } conso else-if (true) {
+      print conso "true";
     }
-    bye conso;
+    end conso;
     `,
     output: "true",
   },
   {
     name: `else-if statement success test - 2: if with multiple else-ifs, should success`,
     input: `
-    hi conso
-    conso ye hai x = 10;
-    agar conso (x < 5) {
-      bol conso "x < 5";
-    } nahi to conso (x < 8) {
-      bol conso "x < 8";
-    } nahi to conso (x < 12) {
-      bol conso "x < 12";
-    } nahi to conso (x < 15) {
-      bol conso "x < 15";
+    start conso
+    conso x = 10;
+    conso if (x < 5) {
+      print conso "x < 5";
+    } conso else-if (x < 8) {
+      print conso "x < 8";
+    } conso else-if (x < 12) {
+      print conso "x < 12";
+    } conso else-if (x < 15) {
+      print conso "x < 15";
     }
-    bye conso;
+    end conso;
     `,
     output: "x < 12",
   },
   {
     name: `else-if statement success test - 3: nested if-else-if ladder, should success`,
     input: `
-    hi conso
-    conso ye hai a = 15;
-    agar conso (a < 0) {
-      bol conso "a < 0";
-    } nahi to conso (a > 0) {
-      agar conso (a < 10) {
-        bol conso "a < 10";
-      } nahi to conso (a < 20) {
-        bol conso "a < 20";
+    start conso
+    conso a = 15;
+    conso if (a < 0) {
+      print conso "a < 0";
+    } conso else-if (a > 0) {
+      conso if (a < 10) {
+        print conso "a < 10";
+      } conso else-if (a < 20) {
+        print conso "a < 20";
       }
     }
-    bye conso
+    end conso
     `,
     output: "a < 20",
   },
   {
     name: `else-if statement success test - 4: if-else-if ladder evaluating to else, should success`,
     input: `
-    hi conso
-    conso ye hai x = 15;
-    agar conso (x < 5) {
-      bol conso "x < 5";
-    } nahi to conso (x < 8) {
-      bol conso "x < 8";
-    } nahi to conso (x < 12) {
-      bol conso "x < 12";
-    } warna conso {
-      bol conso "x > 12";
+    start conso
+    conso x = 15;
+    conso if (x < 5) {
+      print conso "x < 5";
+    } conso else-if (x < 8) {
+      print conso "x < 8";
+    } conso else-if (x < 12) {
+      print conso "x < 12";
+    } conso else {
+      print conso "x > 12";
     }
-    bye conso;
+    end conso;
     `,
     output: "x > 12",
   },
@@ -896,13 +896,13 @@ export const WithOutputPositiveTests = [
   {
     name: `logical "&&" test with true false, should success`,
     input: `
-        hi conso
-        agar conso (true && false) {
-          bol conso "true";
-        } warna conso {
-          bol conso "false";
+        start conso
+        conso if (true && false) {
+          print conso "true";
+        } conso else {
+          print conso "false";
         }
-        bye conso;
+        end conso;
       `,
     output: `false`,
   },
@@ -910,67 +910,67 @@ export const WithOutputPositiveTests = [
   {
     name: `modulus operator "%" test, should success`,
     input: `
-        hi conso
-        bol conso 90 % 9;
-        bye conso;
+        start conso
+        print conso 90 % 9;
+        end conso;
       `,
     output: `0`,
   },
   {
     name: `modulus operator "%" test - 2, should success`,
     input: `
-        hi conso
-        bol conso 27 % 5;
-        bye conso;
+        start conso
+        print conso 27 % 5;
+        end conso;
       `,
     output: `2`,
   },
   {
     name: `modulus operator "%" test - 2, should success`,
     input: `
-        hi conso
-        bol conso 5 % 20;
-        bye conso;
+        start conso
+        print conso 5 % 20;
+        end conso;
       `,
     output: `5`,
   },
   {
     name: `whileStatement test with single continue statement, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 5;
-      conso ye hai step = 0;
-      jab tak conso (a > 0) {
+      start conso;
+      conso a = 5;
+      conso step = 0;
+      conso while (a > 0) {
         step += 1;
-        agar conso (a % 2 != 0){
+        conso if (a % 2 != 0){
           a -= 2;
-          agla dekh conso;
+          conso next;
         }
         a -= 1;
       }
-      bol conso step;
-      bye conso;
+      print conso step;
+      end conso;
     `,
     output: "3",
   },
   {
     name: `whileStatement test with multiple continue statement, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 5;
-      conso ye hai step = 0;
-      jab tak conso (a > 0) {
+      start conso;
+      conso a = 5;
+      conso step = 0;
+      conso while (a > 0) {
         step += 1;
-        agar conso (a % 2 == 0){
+        conso if (a % 2 == 0){
           a -= 2;
-          agla dekh conso;
+          conso next;
         }
         a -= 1;
-        agla dekh conso;
-        bol conso "oye oye oye.. yha tk nhi aana tha conso";
+        conso next;
+        print conso "oye oye oye.. yha tk nhi aana tha conso";
       }
-      bol conso step;
-      bye conso;
+      print conso step;
+      end conso;
     `,
     output: "3",
   },
@@ -979,20 +979,20 @@ export const WithOutputPositiveTests = [
     // a: 10 => 7 => 6 => 3 => 2 => -1
     name: `whileStatement test with single continue statement without block, should success`,
     input: `
-      hi conso;
-      conso ye hai a = 10;
-      conso ye hai step = 0;
-      jab tak conso (a > 0) {
-        agar conso (a % 2 == 0){
+      start conso;
+      conso a = 10;
+      conso step = 0;
+      conso while (a > 0) {
+        conso if (a % 2 == 0){
           a -= 3;
-          agla dekh conso;
+          conso next;
         }
         a -= 1;
-        agar conso (step == 1) agla dekh conso
+        conso if (step == 1) conso next
         step += 1;
       }
-      bol conso step;
-      bye conso;
+      print conso step;
+      end conso;
     `,
     output: "1",
   },

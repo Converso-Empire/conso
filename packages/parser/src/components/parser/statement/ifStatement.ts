@@ -44,8 +44,8 @@ export default class IfStatement extends Statement {
     const ifStatement = this.getConditionalStatement(TokenTypes.AGAR_conso);
     const alternates: ASTNode[] = [];
 
-    // Loop until we keep getting "nahi to conso" or "warna conso"
-    // Break as soon as we get the first "warna conso" instance
+    // Loop until we keep getting "conso else-if" or "conso else"
+    // Break as soon as we get the first "conso else" instance
     for (
       let lookahead = this._tokenExecutor.getLookahead();
       lookahead !== null && HANDLED_LOOP_TOKEN_TYPES.includes(lookahead.type);

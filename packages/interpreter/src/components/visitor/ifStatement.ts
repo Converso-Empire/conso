@@ -28,11 +28,11 @@ export default class IfStatement implements Visitor {
           for (var alternate of alternates) {
             const alternateTest = alternate.test;
             if (!alternateTest) {
-              // Reached the "warna conso" node in the alternate list, simply evaluate it and break
+              // Reached the "conso else" node in the alternate list, simply evaluate it and break
               this.evaluateNode(alternate, parentScope);
               break;
             } else {
-              // Evaluate the "test" condition of the "nahi to conso" node
+              // Evaluate the "test" condition of the "conso else-if" node
               // If the condition is true, evaluate the node and break
               const testResult = InterpreterModule.getVisitor(alternateTest!.type).visitNode(alternateTest);
               if (testResult === true || testResult === "true") {

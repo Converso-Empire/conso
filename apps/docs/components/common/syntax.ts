@@ -18,7 +18,7 @@ export const consoSyntax = languages.extend("clike", {
     pattern: /(["'])((?:\\\1|(?:(?!\1)).)*)(\1)/,
     greedy: true,
   },
-  keyword: /\b(?:hi conso|bye conso|bol conso|conso ye hai|nalla|agar conso|nahi to conso|warna conso|jab tak conso|bas kar conso|agla dekh conso)\b/,
+  keyword: /\b(?:hi conso|end conso|print conso|conso|null|conso if|conso else-if|conso else|conso while|stop conso|conso next)\b/,
   boolean: /\b(?:true|false)\b/,
   number: /(?:(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[-+]?\d+)?)i?/i,
   operator:

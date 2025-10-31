@@ -1,27 +1,27 @@
 export const TokenTypes = {
   NULL_TYPE: null,
 
-  HI_conso_TYPE: "hi conso",
+  HI_conso_TYPE: "start conso",
 
-  BYE_conso_TYPE: "bye conso",
+  BYE_conso_TYPE: "end conso",
 
-  BOL_conso_TYPE: "bol conso",
+  BOL_conso_TYPE: "print conso",
 
-  conso_YE_HAI_TYPE: "conso ye hai",
+  conso_YE_HAI_TYPE: "conso",
 
-  AGAR_conso: "agar conso",
+  AGAR_conso: "conso if",
 
-  WARNA_conso: "warna conso",
+  WARNA_conso: "conso else",
 
-  NAHI_TO_conso: "nahi to conso",
+  NAHI_TO_conso: "conso else-if",
 
-  JAB_TAK_conso: "jab tak conso",
+  JAB_TAK_conso: "conso while",
 
-  BAS_KAR_conso: "bas kar conso",
+  BAS_KAR_conso: "stop conso",
 
-  AGLA_DEKH_conso: "agla dekh conso",
+  AGLA_DEKH_conso: "conso next",
 
-  NALLA_TYPE: "NALLA",
+  null_TYPE: "null",
 
   SEMI_COLON_TYPE: ";",
 
@@ -79,17 +79,17 @@ export const SPEC = [
   { regex: /^,/, tokenType: TokenTypes.COMMA_TYPE },
 
   //Keywords
-  { regex: /^\bhi conso\b/, tokenType: TokenTypes.HI_conso_TYPE },
-  { regex: /^\bbye conso\b/, tokenType: TokenTypes.BYE_conso_TYPE },
-  { regex: /^\bbol conso\b/, tokenType: TokenTypes.BOL_conso_TYPE },
-  { regex: /^\bconso ye hai\b/, tokenType: TokenTypes.conso_YE_HAI_TYPE },
-  { regex: /^\bagar conso\b/, tokenType: TokenTypes.AGAR_conso },
-  { regex: /^\bnahi to conso\b/, tokenType: TokenTypes.NAHI_TO_conso },
-  { regex: /^\bwarna conso\b/, tokenType: TokenTypes.WARNA_conso },
-  { regex: /^\bnalla\b/, tokenType: TokenTypes.NALLA_TYPE },
-  { regex: /^\bjab tak conso\b/, tokenType: TokenTypes.JAB_TAK_conso },
-  { regex: /^\bbas kar conso\b/, tokenType: TokenTypes.BAS_KAR_conso },
-  { regex: /^\bagla dekh conso\b/, tokenType: TokenTypes.AGLA_DEKH_conso },
+  { regex: /^\bstart conso\b/, tokenType: TokenTypes.HI_conso_TYPE },
+  { regex: /^\bend conso\b/, tokenType: TokenTypes.BYE_conso_TYPE },
+  { regex: /^\bprint conso\b/, tokenType: TokenTypes.BOL_conso_TYPE },
+  { regex: /^\bconso\b/, tokenType: TokenTypes.conso_YE_HAI_TYPE },
+  { regex: /^\bconso if\b/, tokenType: TokenTypes.AGAR_conso },
+  { regex: /^\bconso else-if\b/, tokenType: TokenTypes.NAHI_TO_conso },
+  { regex: /^\bconso else\b/, tokenType: TokenTypes.WARNA_conso },
+  { regex: /^\bnull\b/, tokenType: TokenTypes.null_TYPE },
+  { regex: /^\bconso while\b/, tokenType: TokenTypes.JAB_TAK_conso },
+  { regex: /^\bstop conso\b/, tokenType: TokenTypes.BAS_KAR_conso },
+  { regex: /^\bconso next\b/, tokenType: TokenTypes.AGLA_DEKH_conso },
 
   // Number
   { regex: /^[+-]?([\d]*[.])?[\d]+/, tokenType: TokenTypes.NUMBER_TYPE },

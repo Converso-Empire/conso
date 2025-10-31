@@ -5,20 +5,20 @@ import InvalidStateException from "../../src/exceptions/invalidStateException";
 const tokenizer = new TokenizerImpl(SPEC);
 
 test("test Tokenizer.getNextToken with HI_conso_TYPE should success", () => {
-  tokenizer.initTokenizer(`hi conso`);
+  tokenizer.initTokenizer(`start conso`);
 
   expect(tokenizer.getNextToken()).toStrictEqual({
     type: TokenTypes.HI_conso_TYPE,
-    value: "hi conso",
+    value: "start conso",
   });
 });
 
 test("test Tokenizer.getNextToken with BYE_conso_TYPE should success", () => {
-  tokenizer.initTokenizer(`bye conso`);
+  tokenizer.initTokenizer(`end conso`);
 
   expect(tokenizer.getNextToken()).toStrictEqual({
     type: TokenTypes.BYE_conso_TYPE,
-    value: "bye conso",
+    value: "end conso",
   });
 });
 

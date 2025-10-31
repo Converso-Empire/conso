@@ -24,7 +24,7 @@ export default abstract class Literal {
       case TokenTypes.STRING_TYPE:
         return consoModule.getStringLiteral();
 
-      case TokenTypes.NALLA_TYPE:
+      case TokenTypes.null_TYPE:
         return consoModule.getNullLiteral();
 
       default:

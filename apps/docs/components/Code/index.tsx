@@ -7,25 +7,25 @@ import Terminal from "./Terminal";
 
 
 const initialCode = `
-hi conso
- bol conso "Hello World";
+start conso
+ print conso "Hello World";
  
-  conso ye hai a = 3;
-  conso ye hai b = 0;
+  conso a = 3;
+  conso b = 0;
 
-  jab tak conso (b < 5) {
-    bol conso b;
+  conso while (b < 5) {
+    print conso b;
 
-    agar conso (b == a) {
-      bol conso "b is equal to a";
-    } nahi to conso (b == 0) {
-      bol conso "b is equal to zero";
+    conso if (b == a) {
+      print conso "b is equal to a";
+    } conso else-if (b == 0) {
+      print conso "b is equal to zero";
     }
 
     b += 1;
   }
 
-bye conso
+end conso
 `;
 
 const Code = (props: Props) => {

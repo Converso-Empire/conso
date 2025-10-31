@@ -7,17 +7,17 @@ const features = [
     name: "General",
     description: (
       <>
-        <code className="language-cpp">hi conso</code> is the entrypoint for the
+        <code className="language-cpp">start conso</code> is the entrypoint for the
         program and all program must end with{" "}
-        <code className="language-cpp">bye conso</code>. Anything outside of it
+        <code className="language-cpp">end conso</code>. Anything outside of it
         will be ignored.
       </>
     ),
     code: `This will be ignored
 
-hi conso
+start conso
   // Write code here
-bye conso
+end conso
 
 This too
     `,
@@ -27,17 +27,17 @@ This too
     description: (
       <>
         Variables can be declared using{" "}
-        <code className="language-cpp">conso ye hai</code>.
+        <code className="language-cpp">conso</code>.
       </>
     ),
-    code: `hi conso
-    conso ye hai a = 10;
-    conso ye hai b = "two";
-    conso ye hai c = 15;
+    code: `start conso
+    conso a = 10;
+    conso b = "two";
+    conso c = 15;
     a = a + 1;
     b = 21;
     c *= 2;
-bye conso
+end conso
     `,
   },
   {
@@ -45,83 +45,83 @@ bye conso
     description: (
       <>
         Numbers and strings are like other languages. Null values can be denoted
-        using <code className="language-cpp">nalla</code>.{" "}
+        using <code className="language-cpp">null</code>.{" "}
         <code className="language-cpp">true</code> and{" "}
         <code className="language-cpp">false</code> are the boolean values.
       </>
     ),
-    code: `hi conso
-    conso ye hai a = 10;
-    conso ye hai b = 10 + (15*20);
-    conso ye hai c = "two";
-    conso ye hai d = 'ok';
-    conso ye hai e = nalla;
-    conso ye hai f = true;
-    conso ye hai g = false;
-bye conso
+    code: `start conso
+    conso a = 10;
+    conso b = 10 + (15*20);
+    conso c = "two";
+    conso d = 'ok';
+    conso e = null;
+    conso f = true;
+    conso g = false;
+end conso
     `,
   },
   {
     name: "Built-ins",
     description: (
       <>
-        Use <code className="language-cpp">bol conso</code> to print anything to
+        Use <code className="language-cpp">print conso</code> to print anything to
         console.
       </>
     ),
-    code: `hi conso
-    bol conso "Hello World";
-    conso ye hai a = 10;
+    code: `start conso
+    print conso "Hello World";
+    conso a = 10;
     {
-       conso ye hai b = 20;
-       bol conso a + b;
+       conso b = 20;
+       print conso a + b;
     }
-    bol conso 5, 'ok', nalla , true , false;
-bye conso
+    print conso 5, 'ok', null , true , false;
+end conso
     `,
   },
   {
     name: "Conditionals",
     description: (
       <>
-        conso supports if-else-if ladder construct , <code className="language-cpp">agar conso</code> block will execute if condition is <code className="language-cpp">true</code>, otherwise one of the subsequently added <code className="language-cpp">nahi to conso</code> blocks will execute if their respective condition is <code className="language-cpp">true</code>, and the <code className="language-cpp">warna conso</code> block will eventually execute if all of the above conditions are <code className="language-cpp">false</code>.
+        conso supports if-else-if ladder construct , <code className="language-cpp">conso if</code> block will execute if condition is <code className="language-cpp">true</code>, otherwise one of the subsequently added <code className="language-cpp">conso else-if</code> blocks will execute if their respective condition is <code className="language-cpp">true</code>, and the <code className="language-cpp">conso else</code> block will eventually execute if all of the above conditions are <code className="language-cpp">false</code>.
       </>
     ),
-    code: `hi conso
-    conso ye hai a = 10;
-    agar conso (a < 20) {
-      bol conso "a is less than 20";
-    } nahi to conso ( a < 25 ) {
-      bol conso "a is less than 25";
-    } warna conso {
-      bol conso "a is greater than or equal to 25";
+    code: `start conso
+    conso a = 10;
+    conso if (a < 20) {
+      print conso "a is less than 20";
+    } conso else-if ( a < 25 ) {
+      print conso "a is less than 25";
+    } conso else {
+      print conso "a is greater than or equal to 25";
     }
-bye conso
+end conso
     `
   },
   {
     name: "Loops",
     description: (
       <>
-        Statements inside <code className="language-cpp">jab tak conso</code> blocks are executed as long as a specified condition evaluates to <code className="language-cpp">true</code>. If the condition becomes <code className="language-cpp">false</code>, statement within the loop stops executing and control passes to the statement following the loop. 
-        Use <code className="language-cpp">bas kar conso</code> to break the loop and <code className="language-cpp">agla dekh conso</code> to continue within loop.
+        Statements inside <code className="language-cpp">conso while</code> blocks are executed as long as a specified condition evaluates to <code className="language-cpp">true</code>. If the condition becomes <code className="language-cpp">false</code>, statement within the loop stops executing and control passes to the statement following the loop. 
+        Use <code className="language-cpp">stop conso</code> to break the loop and <code className="language-cpp">conso next</code> to continue within loop.
       </>
     ),
-    code: `hi conso
-    conso ye hai a = 0;
-    jab tak conso (a < 10) {
+    code: `start conso
+    conso a = 0;
+    conso while (a < 10) {
       a += 1;
-      agar conso (a == 5) {
-        bol conso "andar se bol conso ", a;
-        agla dekh conso;
+      conso if (a == 5) {
+        print conso "andar se print conso ", a;
+        conso next;
       }
-      agar conso (a == 6) {
-        bas kar conso;
+      conso if (a == 6) {
+        stop conso;
       }
-      bol conso a;
+      print conso a;
     }
-    bol conso "done";
-bye conso
+    print conso "done";
+end conso
     `
   }
 

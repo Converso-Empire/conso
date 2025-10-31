@@ -9,7 +9,7 @@ export default class ContinueStatement implements Visitor {
     if (InterpreterModule.getCurrentScope().isLoop()) {
       InterpreterModule.getCurrentScope().setContinueStatement(true);
     } else {
-      throw new RuntimeException(`Kha "agla dekh conso"?? Loop kidhar hai?`);
+      throw new RuntimeException(`Kha "conso next"?? Loop kidhar hai?`);
     }
   }
 }

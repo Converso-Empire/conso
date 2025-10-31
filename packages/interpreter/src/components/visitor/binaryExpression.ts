@@ -2,7 +2,7 @@ import Visitor from ".";
 import { ASTNode, NodeType } from "conso-parser";
 
 import InvalidStateException from "../../exceptions/invalidStateException";
-import NallaPointerException from "../../exceptions/nallaPointerException";
+import NullPointerException from "../../exceptions/nullPointerException";
 import RuntimeException from "../../exceptions/runtimeException";
 import { getOperationValue } from "../../helpers";
 import InterpreterModule from "../../module/interpreterModule";
@@ -21,13 +21,13 @@ export default class BinaryExpression implements Visitor {
     // handling logical & binary both at the same place as both operate on two operands
     if (node.type == NodeType.BinaryExpression) {
       if (node.operator !== "==" && node.operator !== "!=") {
-        this._checkNalla(node);
+        this._checknull(node);
         this._checkBoolean(node);
       } 
       left = this._getNodeValue(node.left);
       right = this._getNodeValue(node.right);
     } else if (node.type == NodeType.LogicalExpression) {
-      this._checkNalla(node);
+      this._checknull(node);
 
       left = node.left.type == NodeType.BooleanLiteral ? (node.left.value == "true" ? true : false) : InterpreterModule.getVisitor(node.left.type).visitNode(
         node.left
@@ -41,31 +41,31 @@ export default class BinaryExpression implements Visitor {
     return getOperationValue({ left, right }, node.operator);
   }
 
-  private _checkNalla(node: ASTNode) {
+  private _checknull(node: ASTNode) {
     if (!node.left || !node.right || !node.operator) {
       throw new InvalidStateException(
         `Left , right or operator not found for: ${node.type}`
       );
     }
 
-    const nallaException = new NallaPointerException(
-      `Nalla operand ni jamta "${node.operator}" ke sath`
+    const nullException = new NullPointerException(
+      `null operand ni jamta "${node.operator}" ke sath`
     );
 
     if (
       node.left.type === NodeType.NullLiteral ||
       node.right.type === NodeType.NullLiteral
     )
-      throw nallaException;
+      throw nullException;
 
     if (node.left.type === NodeType.IdentifierExpression && node.left.name) {
       const value = InterpreterModule.getCurrentScope().get(node.left.name);
-      if (value === null) throw nallaException;
+      if (value === null) throw nullException;
     }
 
     if (node.right.type === NodeType.IdentifierExpression && node.right.name) {
       const value = InterpreterModule.getCurrentScope().get(node.right.name);
-      if (value === null) throw nallaException;
+      if (value === null) throw nullException;
     }
   }
 

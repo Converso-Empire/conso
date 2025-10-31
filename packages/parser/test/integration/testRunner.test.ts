@@ -1,4 +1,4 @@
-import NallaPointerException from "../../src/exceptions/nallaPointerException";
+import nullPointerException from "../../src/exceptions/nullPointerException";
 import consoModule from "../../src/module/consoModule";
 
 import {
@@ -19,7 +19,7 @@ type posTestObjType = typeof StatementTests[0];
 type negTestObjType = {
   name: string;
   input: string;
-  output: SyntaxErrorConstructor | typeof NallaPointerException;
+  output: SyntaxErrorConstructor | typeof nullPointerException;
 };
 
 StatementTests.forEach((testCase) => {
@@ -68,8 +68,8 @@ function _runNegativeTests(testCase: negTestObjType) {
 // test("jest test", () => {
 //   const parser = consoModule.getParser();
 //   console.debug(JSON.stringify(parser.parse(`
-//   hi conso
-//       bol conso 9 == 90;
-//       bye conso
+//   start conso
+//       print conso 9 == 90;
+//       end conso
 //   `)));
 // })

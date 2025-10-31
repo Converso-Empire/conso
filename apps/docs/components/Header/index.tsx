@@ -20,7 +20,7 @@ export default function Header() {
               </p>
               <div className="prose text-center pt-4 pb-4">
                 {" "}
-                <code className="language-js">npm i -g conso</code>
+                <code className="language-js">npm install -g @converso-empire/conso</code>
               </div>
               <div className="mt-5 sm:mt-8 sm:flex justify-center">
                 <div className="rounded-md shadow">

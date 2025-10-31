@@ -2,7 +2,7 @@ import Visitor from ".";
 import { ASTNode } from "conso-parser";
 
 import InvalidStateException from "../../exceptions/invalidStateException";
-import NallaPointerException from "../../exceptions/nallaPointerException";
+import NullPointerException from "../../exceptions/nullPointerException";
 import RuntimeException from "../../exceptions/runtimeException";
 import { getOperationValue } from "../../helpers";
 import InterpreterModule from "../../module/interpreterModule";
@@ -29,8 +29,8 @@ export default class AssignmentExpression implements Visitor {
       const left = currentScope.get(identifier);
 
       if (left === null && node.operator !== "=")
-        throw new NallaPointerException(
-          `Nalla operand ni jamta "${node.operator}" ke sath`
+        throw new NullPointerException(
+          `null operand ni jamta "${node.operator}" ke sath`
         );
 
       if ((left === true || left === false) && node.operator !== "=")

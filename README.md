@@ -63,7 +63,7 @@ Conso represents the perfect blend of simplicity and power, designed by Converso
 Install Conso globally via npm:
 
 ```bash
-npm install -g conso
+npm install -g @converso-empire/conso
 ```
 
 Verify installation:
@@ -81,9 +81,9 @@ conso --version
 **1. Create a new file (`hello.conso`)**
 
 ```conso
-hi conso
-  bol conso "Hello from Converso Empire!";
-bye conso
+start conso
+  print conso "Hello from Converso Empire!";
+end conso
 ```
 
 **2. Run your program**
@@ -107,104 +107,104 @@ Experiment with Conso in our [Interactive Playground](https://conso.js.org/#play
 ## 📚 Documentation
 
 <h3 align="center">General</h3>
-<p align="center"><code>hi conso</code> is the entrypoint for the program and all program must end with <code>bye conso</code>. Anything outside of it will be ignored.</p>
+<p align="center"><code>start conso</code> is the entrypoint for the program and all program must end with <code>end conso</code>. Anything outside of it will be ignored.</p>
 
 ```
 
 This will be ignored
 
-hi conso
+start conso
 // Write code here
-bye conso
+end conso
 
 This too
 ```
 
 <h3 align="center">Variables</h3>
-<p align="center">Variables can be declared using <code>conso ye hai</code>.</p>
+<p align="center">Variables can be declared using <code>conso</code>.</p>
 
 ```
 
-hi conso
-  conso ye hai a = 10;
-  conso ye hai b = "two";
-  conso ye hai c = 15;
+start conso
+  conso a = 10;
+  conso b = "two";
+  conso c = 15;
   a = a + 1;
   b = 21;
   c *= 2;
-bye conso
+end conso
 ```
 
 <h3 align="center">Types</h3>
-<p align="center">Numbers and strings are like other languages. Null values can be denoted using <code>nalla</code>. <code>true</code> and <code>false</code> are the boolean values.</p>
+<p align="center">Numbers and strings are like other languages. Null values can be denoted using <code>null</code>. <code>true</code> and <code>false</code> are the boolean values.</p>
 
 ```
 
-hi conso
-  conso ye hai a = 10;
-  conso ye hai b = 10 + (15*20);
-  conso ye hai c = "two";
-  conso ye hai d = 'ok';
-  conso ye hai e = nalla;
-  conso ye hai f = true;
-  conso ye hai g = false;
-bye conso
+start conso
+  conso a = 10;
+  conso b = 10 + (15*20);
+  conso c = "two";
+  conso d = 'ok';
+  conso e = null;
+  conso f = true;
+  conso g = false;
+end conso
 ```
 
 <h3 align="center">Built-ins</h3>
-<p align="center">Use <code>bol conso</code> to print anything to console.</p>
+<p align="center">Use <code>print conso</code> to print anything to console.</p>
 
 ```
 
-hi conso
-  bol conso "Hello World";
-  conso ye hai a = 10;
+start conso
+  print conso "Hello World";
+  conso a = 10;
   {
-    conso ye hai b = 20;
-    bol conso a + b;
+    conso b = 20;
+    print conso a + b;
   }
-  bol conso 5, 'ok', nalla , true , false;
-bye conso
+  print conso 5, 'ok', null , true , false;
+end conso
 ```
 
 <h3 align="center">Conditionals</h3>
-<p align="center">conso supports if-else-if ladder construct , <code>agar conso</code> block will execute if condition is <code>true</code>, otherwise one of the subsequently added <code>nahi to conso</code> blocks will execute if their respective condition is <code>true</code>, and the <code>warna conso</code> block will eventually execute if all of the above conditions are <code>false</code>
+<p align="center">conso supports if-else-if ladder construct , <code>conso if</code> block will execute if condition is <code>true</code>, otherwise one of the subsequently added <code>conso else-if</code> blocks will execute if their respective condition is <code>true</code>, and the <code>conso else</code> block will eventually execute if all of the above conditions are <code>false</code>
 
 ```
 
-hi conso
-  conso ye hai a = 10;
-  agar conso (a < 20) {
-    bol conso "a is less than 20";
-  } nahi to conso ( a < 25 ) {
-    bol conso "a is less than 25";
-  } warna conso {
-    bol conso "a is greater than or equal to 25";
+start conso
+  conso a = 10;
+  conso if (a < 20) {
+    print conso "a is less than 20";
+  } conso else-if ( a < 25 ) {
+    print conso "a is less than 25";
+  } conso else {
+    print conso "a is greater than or equal to 25";
   }
-bye conso
+end conso
 ```
 
 <h3 align="center">Loops</h3>
-<p align="center">Statements inside <code>jab tak conso</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>bas kar conso</code> to break the loop and <code className="language-cpp">agla dekh conso</code> to continue within loop.</p>
+<p align="center">Statements inside <code>conso while</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>stop conso</code> to break the loop and <code className="language-cpp">conso next</code> to continue within loop.</p>
 
 
 ```
 
-hi conso
-  conso ye hai a = 0;
-  jab tak conso (a < 10) {
+start conso
+  conso a = 0;
+  conso while (a < 10) {
    a += 1;
-   agar conso (a == 5) {
-    bol conso "andar se bol conso ", a;
-    agla dekh conso;
+   conso if (a == 5) {
+    print conso "andar se print conso ", a;
+    conso next;
    }
-   agar conso (a == 6) {
-    bas kar conso;
+   conso if (a == 6) {
+    stop conso;
    }
-   bol conso a;
+   print conso a;
   }
-  bol conso "done";
-bye conso
+  print conso "done";
+end conso
 ```
 
 ---
