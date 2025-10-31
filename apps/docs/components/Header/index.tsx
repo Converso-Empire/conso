@@ -16,7 +16,7 @@ export default function Header() {
                 A modern multi-paradigm programming language by Converso Empire
               </p>
               <p className="mt-2 text-center text-sm text-gray-400 italic">
-                "Empire of Innovation, Creativity & Intelligence."
+                &ldquo;Empire of Innovation, Creativity & Intelligence.&rdquo;
               </p>
               <div className="prose text-center pt-4 pb-4">
                 {" "}
