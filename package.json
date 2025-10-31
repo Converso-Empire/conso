@@ -1,0 +1,65 @@
+{
+  "name": "conso",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.2.0",
+    "@parcel/transformer-typescript-types": "^2.2.0",
+    "prettier": "^2.5.1",
+    "turbo": "latest",
+    "typescript": "^4.5.4"
+  },
+  "description": "Conso - A modern multi-paradigm programming language by Converso Empire",
+  "keywords": [
+    "conso",
+    "converso-empire",
+    "programming-language",
+    "multi-paradigm",
+    "compiler",
+    "parser",
+    "javascript",
+    "typescript",
+    "innovation",
+    "creativity",
+    "intelligence"
+  ],
+  "author": {
+    "name": "Converso Empire",
+    "url": "http://conversoempire.world/",
+    "email": "info@conversoempire.world"
+  },
+  "contributors": [
+    {
+      "name": "Converso Empire Innovation Division",
+      "url": "https://github.com/Converso-Empire"
+    },
+    {
+      "name": "Muhammad Gohar",
+      "url": "https://github.com/muhammadgohar-official"
+    }
+  ],
+  "homepage": "http://conversoempire.world/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Converso-Empire/conso.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Converso-Empire/conso/issues"
+  },
+  "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=18.0.0"
+  },
+  "packageManager": "npm@10.1.0"
+}

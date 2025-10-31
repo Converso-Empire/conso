@@ -1,0 +1,42 @@
+{
+  "name": "conso-interpreter",
+  "version": "1.0.0",
+  "description": "Interpreter for Conso - A modern programming language by Converso Empire",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsup src/* --dts",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Converso-Empire/conso.git"
+  },
+  "keywords": [
+    "conso",
+    "converso-empire",
+    "programming-language",
+    "interpreter",
+    "multi-paradigm",
+    "javascript",
+    "typescript"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Converso-Empire/conso/issues"
+  },
+  "homepage": "http://conversoempire.world/",
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "ts-jest": "^27.1.2",
+    "tsup": "^5.11.11",
+    "jest": "^27.4.5",
+    "@types/jest": "^27.4.0",
+    "config": "*",
+    "tsconfig": "*",
+    "conso-parser": "*"
+  }
+}
