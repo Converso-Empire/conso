@@ -1,4 +1,4 @@
-import ConsoLogo from "./bhaiLangLogo";
+import ConsoLogo from "./consoLogo";
 
 
 export default function Header() {

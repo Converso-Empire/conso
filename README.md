@@ -81,9 +81,9 @@ conso --version
 **1. Create a new file (`hello.conso`)**
 
 ```conso
-hi bhai
-  bol bhai "Hello from Converso Empire!";
-bye bhai
+hi conso
+  bol conso "Hello from Converso Empire!";
+bye conso
 ```
 
 **2. Run your program**
@@ -107,32 +107,32 @@ Experiment with Conso in our [Interactive Playground](https://conso.js.org/#play
 ## 📚 Documentation
 
 <h3 align="center">General</h3>
-<p align="center"><code>hi bhai</code> is the entrypoint for the program and all program must end with <code>bye bhai</code>. Anything outside of it will be ignored.</p>
+<p align="center"><code>hi conso</code> is the entrypoint for the program and all program must end with <code>bye conso</code>. Anything outside of it will be ignored.</p>
 
 ```
 
 This will be ignored
 
-hi bhai
+hi conso
 // Write code here
-bye bhai
+bye conso
 
 This too
 ```
 
 <h3 align="center">Variables</h3>
-<p align="center">Variables can be declared using <code>bhai ye hai</code>.</p>
+<p align="center">Variables can be declared using <code>conso ye hai</code>.</p>
 
 ```
 
-hi bhai
-  bhai ye hai a = 10;
-  bhai ye hai b = "two";
-  bhai ye hai c = 15;
+hi conso
+  conso ye hai a = 10;
+  conso ye hai b = "two";
+  conso ye hai c = 15;
   a = a + 1;
   b = 21;
   c *= 2;
-bye bhai
+bye conso
 ```
 
 <h3 align="center">Types</h3>
@@ -140,71 +140,71 @@ bye bhai
 
 ```
 
-hi bhai
-  bhai ye hai a = 10;
-  bhai ye hai b = 10 + (15*20);
-  bhai ye hai c = "two";
-  bhai ye hai d = 'ok';
-  bhai ye hai e = nalla;
-  bhai ye hai f = true;
-  bhai ye hai g = false;
-bye bhai
+hi conso
+  conso ye hai a = 10;
+  conso ye hai b = 10 + (15*20);
+  conso ye hai c = "two";
+  conso ye hai d = 'ok';
+  conso ye hai e = nalla;
+  conso ye hai f = true;
+  conso ye hai g = false;
+bye conso
 ```
 
 <h3 align="center">Built-ins</h3>
-<p align="center">Use <code>bol bhai</code> to print anything to console.</p>
+<p align="center">Use <code>bol conso</code> to print anything to console.</p>
 
 ```
 
-hi bhai
-  bol bhai "Hello World";
-  bhai ye hai a = 10;
+hi conso
+  bol conso "Hello World";
+  conso ye hai a = 10;
   {
-    bhai ye hai b = 20;
-    bol bhai a + b;
+    conso ye hai b = 20;
+    bol conso a + b;
   }
-  bol bhai 5, 'ok', nalla , true , false;
-bye bhai
+  bol conso 5, 'ok', nalla , true , false;
+bye conso
 ```
 
 <h3 align="center">Conditionals</h3>
-<p align="center">conso supports if-else-if ladder construct , <code>agar bhai</code> block will execute if condition is <code>true</code>, otherwise one of the subsequently added <code>nahi to bhai</code> blocks will execute if their respective condition is <code>true</code>, and the <code>warna bhai</code> block will eventually execute if all of the above conditions are <code>false</code>
+<p align="center">conso supports if-else-if ladder construct , <code>agar conso</code> block will execute if condition is <code>true</code>, otherwise one of the subsequently added <code>nahi to conso</code> blocks will execute if their respective condition is <code>true</code>, and the <code>warna conso</code> block will eventually execute if all of the above conditions are <code>false</code>
 
 ```
 
-hi bhai
-  bhai ye hai a = 10;
-  agar bhai (a < 20) {
-    bol bhai "a is less than 20";
-  } nahi to bhai ( a < 25 ) {
-    bol bhai "a is less than 25";
-  } warna bhai {
-    bol bhai "a is greater than or equal to 25";
+hi conso
+  conso ye hai a = 10;
+  agar conso (a < 20) {
+    bol conso "a is less than 20";
+  } nahi to conso ( a < 25 ) {
+    bol conso "a is less than 25";
+  } warna conso {
+    bol conso "a is greater than or equal to 25";
   }
-bye bhai
+bye conso
 ```
 
 <h3 align="center">Loops</h3>
-<p align="center">Statements inside <code>jab tak bhai</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>bas kar bhai</code> to break the loop and <code className="language-cpp">agla dekh bhai</code> to continue within loop.</p>
+<p align="center">Statements inside <code>jab tak conso</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>bas kar conso</code> to break the loop and <code className="language-cpp">agla dekh conso</code> to continue within loop.</p>
 
 
 ```
 
-hi bhai
-  bhai ye hai a = 0;
-  jab tak bhai (a < 10) {
+hi conso
+  conso ye hai a = 0;
+  jab tak conso (a < 10) {
    a += 1;
-   agar bhai (a == 5) {
-    bol bhai "andar se bol bhai ", a;
-    agla dekh bhai;
+   agar conso (a == 5) {
+    bol conso "andar se bol conso ", a;
+    agla dekh conso;
    }
-   agar bhai (a == 6) {
-    bas kar bhai;
+   agar conso (a == 6) {
+    bas kar conso;
    }
-   bol bhai a;
+   bol conso a;
   }
-  bol bhai "done";
-bye bhai
+  bol conso "done";
+bye conso
 ```
 
 ---

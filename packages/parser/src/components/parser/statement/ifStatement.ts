@@ -7,7 +7,7 @@ import { ASTNode } from "../types/nodeTypes";
 
 import Expression from "./expression";
 
-const HANDLED_LOOP_TOKEN_TYPES = [TokenTypes.WARNA_BHAI, TokenTypes.NAHI_TO_BHAI];
+const HANDLED_LOOP_TOKEN_TYPES = [TokenTypes.WARNA_conso, TokenTypes.NAHI_TO_conso];
 
 export default class IfStatement extends Statement {
 
@@ -41,21 +41,21 @@ export default class IfStatement extends Statement {
 
   getStatement(): ASTNode {
 
-    const ifStatement = this.getConditionalStatement(TokenTypes.AGAR_BHAI);
+    const ifStatement = this.getConditionalStatement(TokenTypes.AGAR_conso);
     const alternates: ASTNode[] = [];
 
-    // Loop until we keep getting "nahi to bhai" or "warna bhai"
-    // Break as soon as we get the first "warna bhai" instance
+    // Loop until we keep getting "nahi to conso" or "warna conso"
+    // Break as soon as we get the first "warna conso" instance
     for (
       let lookahead = this._tokenExecutor.getLookahead();
       lookahead !== null && HANDLED_LOOP_TOKEN_TYPES.includes(lookahead.type);
       lookahead = this._tokenExecutor.getLookahead()
     ) {
-      if (lookahead.type === TokenTypes.WARNA_BHAI) {
+      if (lookahead.type === TokenTypes.WARNA_conso) {
         alternates.push(this._tokenExecutor.eatTokenAndForwardLookahead(lookahead.type) && Statement.getStatementImpl(this._tokenExecutor.getLookahead()!).getStatement());
         break;
-      } else if (lookahead.type === TokenTypes.NAHI_TO_BHAI) {
-        alternates.push(this.getConditionalStatement(TokenTypes.NAHI_TO_BHAI));
+      } else if (lookahead.type === TokenTypes.NAHI_TO_conso) {
+        alternates.push(this.getConditionalStatement(TokenTypes.NAHI_TO_conso));
       }
     }
 

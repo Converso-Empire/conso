@@ -6,174 +6,174 @@ export const NegativeTestCases = [
   {
     name: "interpreter assigning variable before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a = 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter assigning variable before declaration test with addition, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a += 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter assigning variable before declaration test with subtraction, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a -= 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter assigning variable before declaration test with multiplication, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a -= 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter assigning variable before declaration test with division, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a /= 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter assigning variable before declaration test - 2, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter adding two variables before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a + b;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter adding variable with constant before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a + 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter subtracting variable with constant before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a - 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter subtracting two variables before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a - b;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter multiplying variable with constant before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a * 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter multiplying two variables before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a * b;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter dividing variable with constant before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a / 4;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter dividing two variables before declaration test, should throw an exception",
     input: `
-          hi bhai;
+          hi conso;
           a / b;
-          bye bhai;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter printing variable before declaration test, should throw an exception",
     input: `
-          hi bhai;
-          bol bhai a;
-          bye bhai;
+          hi conso;
+          bol conso a;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter printing multiple variables before declaration test, should throw an exception",
     input: `
-          hi bhai;
-          bol bhai a, b;
-          bye bhai;
+          hi conso;
+          bol conso a, b;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter printing multiple variables with only one of them declared, should throw an exception",
     input: `
-          hi bhai;
-          bhai ye hai a = 8;
-          bol bhai a, b;
-          bye bhai;
+          hi conso;
+          conso ye hai a = 8;
+          bol conso a, b;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter declaring multiple variables with chain assignment, should throw an exception",
     input: `
-          hi bhai;
-          bhai ye hai a = b = 8;
-          bye bhai;
+          hi conso;
+          conso ye hai a = b = 8;
+          bye conso;
         `,
     exception: RuntimeException,
   },
   {
     name: "interpreter re declare already declared variable, should throw an exception",
     input: `
-        hi bhai;
-        bhai ye hai a;
+        hi conso;
+        conso ye hai a;
         a = 9;
-        bhai ye hai a = 0;
-        bye bhai;
+        conso ye hai a = 0;
+        bye conso;
       `,
     exception: RuntimeException,
   },
@@ -181,58 +181,58 @@ export const NegativeTestCases = [
   {
     name: "interpreter use nalla variable in expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a;
-      bol bhai a + 9;
-      bye bhai;
+      hi conso;
+      conso ye hai a;
+      bol conso a + 9;
+      bye conso;
     `,
     exception: NallaPointerException,
   },
   {
     name: "interpreter use nalla variable in expression - 2, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = nalla;
-      bol bhai a + 9;
-      bye bhai;
+      hi conso;
+      conso ye hai a = nalla;
+      bol conso a + 9;
+      bye conso;
     `,
     exception: NallaPointerException,
   },
   {
     name: "interpreter use nalla in variable initialisation expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = nalla + 80;
-      bye bhai;
+      hi conso;
+      conso ye hai a = nalla + 80;
+      bye conso;
     `,
     exception: NallaPointerException,
   },
   {
     name: "interpreter use nalla in variable initialisation expression - 2, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = nalla + "jam";
-      bye bhai;
+      hi conso;
+      conso ye hai a = nalla + "jam";
+      bye conso;
     `,
     exception: NallaPointerException,
   },
   {
     name: "interpreter use nalla variable in another variable initialisation expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a;
-      bhai ye hai b = a + "hello";
-      bye bhai;
+      hi conso;
+      conso ye hai a;
+      conso ye hai b = a + "hello";
+      bye conso;
     `,
     exception: NallaPointerException,
   },
   {
     name: "interpreter use nalla variable in complex expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a;
-      bhai ye hai b = ((a*9) * a + "hello");
-      bye bhai;
+      hi conso;
+      conso ye hai a;
+      conso ye hai b = ((a*9) * a + "hello");
+      bye conso;
     `,
     exception: NallaPointerException,
   },
@@ -240,58 +240,58 @@ export const NegativeTestCases = [
   {
     name: "interpreter use true variable in expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = true;
-      bol bhai a + 9;
-      bye bhai;
+      hi conso;
+      conso ye hai a = true;
+      bol conso a + 9;
+      bye conso;
     `,
     exception: RuntimeException,
   },
   {
     name: "interpreter use false variable in expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = false;
-      bol bhai a + 9;
-      bye bhai;
+      hi conso;
+      conso ye hai a = false;
+      bol conso a + 9;
+      bye conso;
     `,
     exception: RuntimeException,
   },
   {
     name: "interpreter use true in variable initialisation expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = true + 80;
-      bye bhai;
+      hi conso;
+      conso ye hai a = true + 80;
+      bye conso;
     `,
     exception: RuntimeException,
   },
   {
     name: "interpreter use false in variable initialisation expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = false + 80;
-      bye bhai;
+      hi conso;
+      conso ye hai a = false + 80;
+      bye conso;
     `,
     exception: RuntimeException,
   },
   {
     name: "interpreter use true variable in another variable initialisation expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = true;
-      bhai ye hai b = a + "hello";
-      bye bhai;
+      hi conso;
+      conso ye hai a = true;
+      conso ye hai b = a + "hello";
+      bye conso;
     `,
     exception: RuntimeException,
   },
   {
     name: "interpreter use false variable in complex expression, should throw an exception",
     input: `
-      hi bhai;
-      bhai ye hai a = false;
-      bhai ye hai b = ((a*9) * a + "hello");
-      bye bhai;
+      hi conso;
+      conso ye hai a = false;
+      conso ye hai b = ((a*9) * a + "hello");
+      bye conso;
     `,
     exception: RuntimeException,
   },
@@ -300,141 +300,141 @@ export const NegativeTestCases = [
   {
     name: "complex expression test with one nalla operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         (nalla * (4 + 8 + 10));
-        bye bhai
+        bye conso
       `,
     output: NallaPointerException,
   },
   {
     name: "complex expression test with one nalla operand and one boolean operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         (nalla * (true + 8 + 10));
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "complex expression test with one nalla operand and one boolean operand - 2, should throw nalla pointer exception",
     input: `
-        hi bhai
+        hi conso
         (true * (nalla + 8 + 10));
-        bye bhai
+        bye conso
       `,
     output: NallaPointerException,
   },
   {
     name: "complex expression test with one nalla operand and one boolean operand - 3, should throw nalla pointer exception",
     input: `
-        hi bhai
+        hi conso
         (nalla + true);
-        bye bhai
+        bye conso
       `,
     output: NallaPointerException,
   },
   {
     name: "complex expression test with one boolean operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         (true * (4 + 8 + 10));
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "additive expression test with only boolean operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         true + false;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "additive expression test with only variable boolean operand, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = true, b = false;
+        hi conso
+        conso ye hai a = true, b = false;
         a + b;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "multiplicative expression test with only boolean operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         true * false;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "multiplicative expression test with only variable boolean operand, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = true, b = false;
+        hi conso
+        conso ye hai a = true, b = false;
         a * b;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "division expression test with only boolean operand, should throw an exception",
     input: `
-        hi bhai
+        hi conso
         true / false;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "division expression test with only variable boolean operand, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = true, b = false;
+        hi conso
+        conso ye hai a = true, b = false;
         a / b;
-        bye bhai
+        bye conso
       `,
     output: RuntimeException,
   },
   {
     name: "print statement test with expression containing nalla, should throw an exception",
     input: `
-        hi bhai
-        bol bhai nalla + 5;
-        bye bhai;
+        hi conso
+        bol conso nalla + 5;
+        bye conso;
       `,
     output: NallaPointerException,
   },
   {
     name: "complex assign test with expression containing nalla, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a;
+        hi conso
+        conso ye hai a;
         a *= 5;
-        bye bhai;
+        bye conso;
       `,
     output: NallaPointerException,
   },
   {
     name: "complex assign test with expression containing true, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = true;
+        hi conso
+        conso ye hai a = true;
         a *= 5;
-        bye bhai;
+        bye conso;
       `,
     output: NallaPointerException,
   },
   {
     name: "complex assign test with expression containing nalla - 2, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = nalla;
+        hi conso
+        conso ye hai a = nalla;
         a /= 5;
-        bye bhai;
+        bye conso;
       `,
     output: NallaPointerException,
   },
@@ -442,34 +442,34 @@ export const NegativeTestCases = [
   {
     name: "infinite while loop, should throw an exception",
     input: `
-        hi bhai
-        jab tak bhai (true) {
+        hi conso
+        jab tak conso (true) {
 
         }
-        bye bhai;
+        bye conso;
       `,
     output: RuntimeException,
   },
   {
     name: "infinite condition while loop, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = 0;
-        jab tak bhai (a < 2) {
-          bol bhai "bhai";
+        hi conso
+        conso ye hai a = 0;
+        jab tak conso (a < 2) {
+          bol conso "conso";
         }
-        bye bhai;
+        bye conso;
       `,
     output: RuntimeException,
   },
   {
     name: "invalid use of break, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = 0;
-        agar bhai (true)
-          bas kar bhai;
-        bye bhai;
+        hi conso
+        conso ye hai a = 0;
+        agar conso (true)
+          bas kar conso;
+        bye conso;
       `,
     output: RuntimeException,
   },
@@ -477,19 +477,19 @@ export const NegativeTestCases = [
   {
     name: "use of nalla with &&, should throw an exception",
     input: `
-        hi bhai
-        bol bhai nalla && 90;
-        bye bhai;
+        hi conso
+        bol conso nalla && 90;
+        bye conso;
       `,
     output: NallaPointerException,
   },
   {
     name: "use of nalla variable with &&, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a;
-        bol bhai a && 90;
-        bye bhai;
+        hi conso
+        conso ye hai a;
+        bol conso a && 90;
+        bye conso;
       `,
     output: NallaPointerException,
   },
@@ -497,9 +497,9 @@ export const NegativeTestCases = [
   {
     name: `modulus operator test with invalid operand, should throw an exception`,
     input: `
-      hi bhai;
-      bol bhai "true" % 9;
-      bye bhai;
+      hi conso;
+      bol conso "true" % 9;
+      bye conso;
     `,
     output: RuntimeException,
   },
@@ -507,24 +507,24 @@ export const NegativeTestCases = [
   {
     name: "infinite condition while loop with continue, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = 0;
-        jab tak bhai (a < 2) {
-          agla dekh bhai;
+        hi conso
+        conso ye hai a = 0;
+        jab tak conso (a < 2) {
+          agla dekh conso;
           a = 5;
         }
-        bye bhai;
+        bye conso;
       `,
     output: RuntimeException,
   },
   {
     name: "invalid use of continue, should throw an exception",
     input: `
-        hi bhai
-        bhai ye hai a = 0;
-        agar bhai (true)
-          agla dekh bhai
-        bye bhai;
+        hi conso
+        conso ye hai a = 0;
+        agar conso (true)
+          agla dekh conso
+        bye conso;
       `,
     output: RuntimeException,
   },

@@ -34,27 +34,37 @@ console.log = function (...args) {
   cl.apply(console, newArgs);
 };
 
-const filePath = yargs(hideBin(process.argv))
-  .command(
-    "<filepath>",
-    "Interpret the contents of the specified file and print it to stdout",
-    () => {},
-    (argv) => {
-      console.info(argv);
-    }
-  )
-  .demandCommand(1).argv._[0];
+async function main() {
+  const argv = await yargs(hideBin(process.argv))
+    .command(
+      "<filepath>",
+      "Interpret the contents of the specified file and print it to stdout",
+      () => {},
+      (argv) => {
+        console.info(argv);
+      }
+    )
+    .demandCommand(1)
+    .parseAsync();
 
-fs.readFile(filePath, "utf8", (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  try {
-    interpreter.interpret(data);
-  } catch (ex) {
-    if (ex instanceof Error) {
-      console.error("\n", chalk.redBright(ex.stack));
+  const filePath = argv._[0] as string;
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
     }
-  }
+    try {
+      interpreter.interpret(data);
+    } catch (ex) {
+      if (ex instanceof Error) {
+        console.error("\n", chalk.redBright(ex.stack));
+      }
+    }
+  });
+}
+
+main().catch((err) => {
+  console.error(chalk.redBright(err));
+  process.exit(1);
 });
