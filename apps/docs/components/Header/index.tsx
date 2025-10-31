@@ -1,4 +1,4 @@
-import consoLogo from "./consoLogo";
+import ConsoLogo from "./bhaiLangLogo";
 
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
             <div className="sm:text-center lg:text-left">
               <h1 className="hidden">conso</h1>
               <div className="p-4">
-                <consoLogo />
+                <ConsoLogo />
               </div>
               <p className="mt-3 text-center text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 A modern multi-paradigm programming language by Converso Empire
