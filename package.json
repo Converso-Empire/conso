@@ -1,6 +1,6 @@
 {
   "name": "@converso-empire/conso",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Conso - A modern multi-paradigm programming language by Converso Empire",
   "private": false,
   "workspaces": [
