@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import interpreter from "converso-conso-interpreter";
+import interpreter from "conso-interpreter";
 
 import { sendEvents } from "../../helpers";
 
