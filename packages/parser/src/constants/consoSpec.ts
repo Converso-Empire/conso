@@ -82,14 +82,14 @@ export const SPEC = [
   { regex: /^\bstart conso\b/, tokenType: TokenTypes.HI_conso_TYPE },
   { regex: /^\bend conso\b/, tokenType: TokenTypes.BYE_conso_TYPE },
   { regex: /^\bprint conso\b/, tokenType: TokenTypes.BOL_conso_TYPE },
-  { regex: /^\bconso\b/, tokenType: TokenTypes.conso_YE_HAI_TYPE },
-  { regex: /^\bconso if\b/, tokenType: TokenTypes.AGAR_conso },
   { regex: /^\bconso else-if\b/, tokenType: TokenTypes.NAHI_TO_conso },
   { regex: /^\bconso else\b/, tokenType: TokenTypes.WARNA_conso },
-  { regex: /^\bnull\b/, tokenType: TokenTypes.null_TYPE },
+  { regex: /^\bconso if\b/, tokenType: TokenTypes.AGAR_conso },
   { regex: /^\bconso while\b/, tokenType: TokenTypes.JAB_TAK_conso },
-  { regex: /^\bstop conso\b/, tokenType: TokenTypes.BAS_KAR_conso },
   { regex: /^\bconso next\b/, tokenType: TokenTypes.AGLA_DEKH_conso },
+  { regex: /^\bconso\b/, tokenType: TokenTypes.conso_YE_HAI_TYPE },
+  { regex: /^\bnull\b/, tokenType: TokenTypes.null_TYPE },
+  { regex: /^\bstop conso\b/, tokenType: TokenTypes.BAS_KAR_conso },
 
   // Number
   { regex: /^[+-]?([\d]*[.])?[\d]+/, tokenType: TokenTypes.NUMBER_TYPE },

@@ -20,9 +20,9 @@ const Terminal = (props: Props) => {
       } bg-black text-white my-6`}
     >
       {isSuccess !== null && !isSuccess ? (
-        <div className="text-red-700 output opacity-0">❌ Arre conso conso conso !!!</div>
+        <div className="text-red-700 output opacity-0">❌ Error: Execution failed!</div>
       ) : (
-        <div className="text-green-700 output opacity-0">Shandaar conso 🎉</div>
+        <div className="text-green-700 output opacity-0">✓ Execution successful! 🎉</div>
       )}
       {output.map((line, i) => {
         return (

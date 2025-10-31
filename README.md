@@ -185,7 +185,7 @@ end conso
 ```
 
 <h3 align="center">Loops</h3>
-<p align="center">Statements inside <code>conso while</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>stop conso</code> to break the loop and <code className="language-cpp">conso next</code> to continue within loop.</p>
+<p align="center">Statements inside <code>conso while</code> blocks are executed as long as a specified condition evaluates to true. If the condition becomes <code>false</code>, statement within the loop stops executing and control passes to the statement following the loop. Use <code>stop conso</code> to break the loop and <code>conso next</code> to continue within loop.</p>
 
 
 ```
@@ -195,7 +195,7 @@ start conso
   conso while (a < 10) {
    a += 1;
    conso if (a == 5) {
-    print conso "andar se print conso ", a;
+    print conso "printing from inside loop: ", a;
     conso next;
    }
    conso if (a == 6) {
@@ -209,7 +209,7 @@ end conso
 
 ---
 
-## 🛠️ Development
+## Development
 
 ### For Contributors
 

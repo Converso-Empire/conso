@@ -112,7 +112,7 @@ end conso
     conso while (a < 10) {
       a += 1;
       conso if (a == 5) {
-        print conso "andar se print conso ", a;
+        print conso "printing from inside loop: ", a;
         conso next;
       }
       conso if (a == 6) {
